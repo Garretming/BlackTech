@@ -3,6 +3,9 @@
     "author":"Clark",
     "description":"视频播放器",
     "language":"zh-hans",
+    "head_title": "统一规范化保存笔记",
+    "head_description": "wiki",
+    "head_keywords": "gitbook,文档部署",
     "plugins": [
         "theme-api","theme-comscore","theme-default","theme-faq"
       
