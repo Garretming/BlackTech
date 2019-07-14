@@ -80,7 +80,7 @@
             ]
         },
         "insert-logo": {
-          "url": "./assets/website/images/logo.png",
+          "url": "./res/images/logo.png",
           "style": "background: none; max-height: 30px; min-height: 30px"
         },
         "code": {
