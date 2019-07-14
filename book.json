@@ -7,7 +7,6 @@
     "head_title": "统一规范化保存笔记",
     "head_description": "wiki",
     "head_keywords": "gitbook,文档部署",
-    "gitbook": "2.6.9",
     "output.name": "BlackTechBook",
     "links":{
         "siderbar":"Clark-xm.xyz"
