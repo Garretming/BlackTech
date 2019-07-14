@@ -10,7 +10,7 @@
     "links":{
         "siderbar":"clark-xm.xyz"
     },
-     "styles": {
+    "styles": {
         "website": "./assets/website/website.css",
         "ebook": "./assets/website/ebook.css",
         "pdf": "./assets/website/pdf.css",
