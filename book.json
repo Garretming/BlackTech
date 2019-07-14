@@ -173,7 +173,7 @@
               "className": "info"
             }
         },
-        "favicon":  "assets/website/images/favicon.ico",
+        "favicon":  "./res/images/favicon.ico",
         "hide-element": {
             "elements": [".gitbook-link"]
         },
