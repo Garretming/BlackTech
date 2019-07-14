@@ -7,9 +7,6 @@
     "head_title": "统一规范化保存笔记",
     "head_description": "wiki",
     "head_keywords": "gitbook,文档部署",
-    "links":{
-        "siderbar":"Clark-xm.xyz"
-    },
     "plugins": [
         "theme-api","theme-comscore","theme-default","theme-faq"
       
