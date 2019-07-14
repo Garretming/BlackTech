@@ -18,8 +18,30 @@
         "epub": "./res/website/epub.css"
     },
     "plugins": [
-        "theme-api","theme-comscore","theme-default","theme-faq"
-      
+        "theme-api","theme-comscore","theme-default","theme-faq",
+        "search-pro",
+        "-insert-logo",
+        "-highlight","prism","prism-themes",
+        "code",
+        "copy-code-button",
+        "github" ,
+        "-lunr", "-search","search-plus",
+        "-back-to-top-button","-page-toc-button","simple-page-toc",
+        "chapter-fold",
+        "-expandable-chapters-small","-page-treeview","-expandable-chapters",
+        "advanced-emoji",
+        "emphasize",
+        "splitter",
+        "-sharing", "sharing-plus",
+        "tbfed-pagefooter",
+        "page-copyright",
+        "sectionx",
+        "-fontsettings",
+        "ancre-navigation",
+        "klipse",
+        "donate",
+        "change_girls",
+        "alerts",
        
 
     ],
