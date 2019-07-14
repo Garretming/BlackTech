@@ -152,8 +152,8 @@
             "minTocSize": 2
         },
         "donate": {
-            "wechat": "./assets/website/images/qr-wechat-255.png",
-            "alipay": "./assets/website/images/qr-alipay-255.png",
+            "wechat": "./res/images/qr-wechat-255.png",
+            "alipay": "./res/images/qr-alipay-255.png",
             "title": "",
             "button": "赏",
             "alipayText": "支付宝打赏",
