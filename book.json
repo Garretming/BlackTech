@@ -10,6 +10,13 @@
     "links":{
         "siderbar":"clark-xm.xyz"
     },
+     "styles": {
+        "website": "./assets/website/website.css",
+        "ebook": "./assets/website/ebook.css",
+        "pdf": "./assets/website/pdf.css",
+        "mobi": "./assets/website/mobi.css",
+        "epub": "./assets/website/epub.css"
+    },
     "plugins": [
         "theme-api","theme-comscore","theme-default","theme-faq"
       
