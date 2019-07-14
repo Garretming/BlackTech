@@ -18,6 +18,13 @@
 
     ],
     "pluginsConfig": {
+        "theme-api": {
+            "theme": "dark"
+        },
+        
+        "theme-default": {
+            "showLevel": true
+        }
     }
     
         
