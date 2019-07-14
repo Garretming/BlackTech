@@ -38,21 +38,7 @@
         "change_girls",
         "alerts",
         "pageview-count",
-        "auto-scroll-table",
-        "popup",
-        "lightbox",
-        "click-reveal",
-        "custom-favicon",
-        "-gitalk","-disqus",
-        "-theme-official",
-        "-sitemap-general",
-        "-terminal",
-        "versions-select",
-        "-rss",
-        "include-codeblock","ace",
-        "edit-link",
-        "-musicxml",
-        "local-video"
+       
 
     ],
     "pluginsConfig": {
