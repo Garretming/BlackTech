@@ -6,7 +6,7 @@
     "head_title": "开发记录",
     "head_description": "开发过程中的文档记录",
     "head_keywords": "界面交互，策划文案，开发协议，开发记录",
-     "output.name": "site",
+    "output.name": "site",
     "links":{
         "siderbar":"clark-xm.xyz"
     },
