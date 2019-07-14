@@ -30,8 +30,6 @@ gitbook update 更新到gitbook的最新版本
 
 1、配置book.json
 
-
-
 ## 安装插件
 
 安装依赖  
