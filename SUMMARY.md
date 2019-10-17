@@ -1,7 +1,5 @@
 # \#目录
 
-\#\#[简介](//README.md)
-
 \#\# Part I
 
 \*\[[简介](//README.md)\]\(README.md\)
