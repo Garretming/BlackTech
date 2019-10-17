@@ -13,7 +13,7 @@
             "showLevel": true
         },
         "plugins": ["summary", "toggle-chapters", "theme-comscore"]
-    }
+}
 ```
 
 插件说明:  
