@@ -57,7 +57,8 @@
         "include-codeblock","ace",
         "edit-link",
         "-musicxml",
-        "local-video"
+        "local-video",
+        "summary"
        
 
     ],
@@ -222,7 +223,14 @@
                     "text": "v2.6.4"
                 }
             ]
-        }
+        },
+        {
+        "title" : "公共服务组文档库",
+        "theme-default": {
+            "showLevel": true
+        },
+        "plugins": ["summary", "toggle-chapters", "theme-comscore"]
+    }
     }
     
         
