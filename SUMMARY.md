@@ -8,28 +8,12 @@
 
 ```
 {
-"title"
-:
-"公共服务组文档库"
-,
-"theme-default"
-:
-{
-"showLevel"
-:
-true
-}
-,
-"plugins"
-:
-[
-"summary"
-,
-"toggle-chapters"
-,
-"theme-comscore"
-]
-}
+        "title" : "公共服务组文档库",
+        "theme-default": {
+            "showLevel": true
+        },
+        "plugins": ["summary", "toggle-chapters", "theme-comscore"]
+    }
 ```
 
 插件说明:  
