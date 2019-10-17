@@ -1,0 +1,4 @@
+1、打开或关闭隐藏程序坞;
+
+【快捷键】单击，【启动台和程序坞】单击，如图。勾上【打开或关闭隐藏程序坞】，如图。按快捷键【⌥+cmmand+D】，如图。[![](https://imgsa.baidu.com/exp/w=500/sign=652d25268c025aafd3327ecbcbecab8d/86d6277f9e2f07089c0649e6e724b899a801f2d1.jpg "苹果电脑Mac怎么使用快捷键隐藏dock栏程序坞")![](https://imgsa.baidu.com/exp/w=500/sign=6610efee95504fc2a25fb005d5dce7f0/6d81800a19d8bc3ef80b652c8c8ba61ea9d345d0.jpg "苹果电脑Mac怎么使用快捷键隐藏dock栏程序坞")![](https://imgsa.baidu.com/exp/w=500/sign=4990f91577310a55c424def487444387/6f061d950a7b0208c5525c076cd9f2d3562cc8b9.jpg "苹果电脑Mac怎么使用快捷键隐藏dock栏程序坞")![](https://imgsa.baidu.com/exp/w=500/sign=f39fcd8641c2d562f208d0edd71090f3/810a19d8bc3eb135795dd45da81ea8d3fc1f44b9.jpg "苹果电脑Mac怎么使用快捷键隐藏dock栏程序坞")![](https://imgsa.baidu.com/exp/w=500/sign=dfa80f38336d55fbc5c676265d234f40/d439b6003af33a87106f63fcc85c10385243b5d2.jpg "苹果电脑Mac怎么使用快捷键隐藏dock栏程序坞")](http://jingyan.baidu.com/album/ac6a9a5eb989f46b643eac10.html?picindex=7)
+
