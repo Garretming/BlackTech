@@ -1,6 +1,6 @@
-\# Summary file name \(defaults to SUMMARY.md\)
+\# 前言 \(defaults to SUMMARY.md\)
 
-\#\# Part I
+\#\# 简介
 
 \*\[Introduction\]\(README.md\)
 
@@ -27,6 +27,4 @@
 \*\[知识库\]\(book/os/knowledge.md\)
 
 \*\[操作系统\]\(book/os/book/os.md\)
-
-
 
