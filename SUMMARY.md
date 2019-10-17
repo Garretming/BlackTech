@@ -1,11 +1,5 @@
 # Gitbook根据目录生成Summary.md
 
-2017.11.16 11:31:43
-
-字数 326
-
-阅读 4935
-
 ## 使用插件生成SUMMARY.md
 
 插件地址:[**gitbook-plugin-summary**](https://link.jianshu.com/?t=https://github.com/julianxhokaxhiu/gitbook-plugin-summary)
@@ -54,7 +48,6 @@ theme-comscore: 主题插件, 修改标题和表格颜色
 ```
         # 菜单1
         ......
-
 ```
 
 该标题对应gitbook中该菜单名称.
@@ -68,7 +61,6 @@ theme-comscore: 主题插件, 修改标题和表格颜色
 ```
         # 用户指南
         ......
-
 ```
 
 ### 注意事项
