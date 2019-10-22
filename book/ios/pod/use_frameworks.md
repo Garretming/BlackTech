@@ -1,12 +1,6 @@
 # use\_frameworks!和\#use\_frameworks!的区别
 
-1
 
-2018.07.24 12:24:58
-
-字数 399
-
-阅读 4247
 
 1、用cocoapods 导入swift 框架到swift项目和OC项目都必须要 use\_frameworks!  
 2、用动态库，必须要在Podfile文件中添加 use\_frameworks!
@@ -27,7 +21,6 @@
 动态库：（.dylib）编译时只存储了指向动态库的引用。可以多个程序指向这个库，在运行时才加载，不会使应用体积变大，但是运行时加载会损耗部分性能，并且依赖外部的环境，如果库不存在或者版本不正确则无法运行
 
 Framework：实际上是一种打包方式，将库的二进制文件，头文件和有关的资源文件打包到一起，方便管理和分发。
-
 ```
 
 \(1\)如果在Podfile文件里不使用 use\_frameworks! 则是会生成相应的 .a文件（静态链接库），通过 static libraries 这个方式来管理pod的代码。
@@ -45,7 +38,6 @@ use\_frameworks! -&gt; dynamic frameworks 方式 -&gt; .framework
 ```
 (1)swift项目cocoapods 默认 use_frameworks!
 (2)OC项目cocoapods 默认 #use_frameworks!
-
 ```
 
 ## 1、用cocoapods导入OC框架到swift项目
@@ -84,13 +76,9 @@ import
 。或者不建头文件，像swift框架一样，直接在需要用到的swift文件中
 import
  xxx。
-
 ```
 
 11人点赞
 
 [日记本](https://www.jianshu.com/nb/13156152)
-
-  
-
 
