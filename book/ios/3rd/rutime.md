@@ -1,4 +1,4 @@
-# Runtime底层原理--IMP查找流程、动态方法解析、消息转发源码分析
+# [^1]Runtime底层原理--IMP查找流程、动态方法解析、消息转发源码分析
 
 1
 
@@ -65,7 +65,6 @@ NSLog
 
 ```
 0x10102e1a0-----0x10102e1a0------0x10102e1a0
-
 ```
 
 来，让我们断点看下，`alloc`和`init`是怎么调用的
@@ -138,7 +137,7 @@ char
     @autoreleasepool 
 {
 
-        
+
         Person 
 *
 p 
@@ -183,7 +182,7 @@ char
 {
  __AtAutoreleasePool __autoreleasepool
 ;
- 
+
         Person 
 *
 p 
@@ -298,21 +297,18 @@ person对象
 
 #### 下层通讯\(通过源码查看objc\_msgSend内部实现\)
 
-首先我们到[苹果open source](https://links.jianshu.com/go?to=https%3A%2F%2Fupload-images.jianshu.io%2Fupload_images%2F5741330-3acf8ade7f319c5f.png%3FimageMogr2%2Fauto-orient%2Fstrip%257CimageView2%2F2%2Fw%2F1240)官网下载最新源码  
-
+首先我们到[苹果open source](https://links.jianshu.com/go?to=https%3A%2F%2Fupload-images.jianshu.io%2Fupload_images%2F5741330-3acf8ade7f319c5f.png%3FimageMogr2%2Fauto-orient%2Fstrip%7CimageView2%2F2%2Fw%2F1240)官网下载最新源码
 
 ![](https://upload-images.jianshu.io/upload_images/5741330-3acf8ade7f319c5f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
 
 源码
 
-
-
-在**方法调用的时候，会发送`objc_msgSend`消息，`objc_msgSend`会根据sel找到函数实现的指针imp**，进而执行函数，那sel是如何找到imp的呢？  
+在**方法调用的时候，会发送**`objc_msgSend`**消息，**`objc_msgSend`**会根据sel找到函数实现的指针imp**，进而执行函数，那sel是如何找到imp的呢？  
 `objc_msgSend`在发送消息时候根据sel查找imp有两种方式
 
 * 快速（通过汇编的缓存快速查找）
 * 慢速（C配合C++、汇编一起查找）
- 
+
   先看下objc\_class
 
 ![](https://upload-images.jianshu.io/upload_images/5741330-da01958ba32dd572.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
@@ -350,10 +346,9 @@ CacheLookup macro
 
     // THIS IS NOT A CALLABLE C FUNCTION
     // Out-of-band p16 is the class to search
-    
+
     MethodTableLookup      // 方法列表中找到imp
     TailCallFunctionPointer x17
-
 ```
 
 **重点:MethodTableLookup是怎么操作的**
@@ -388,8 +383,6 @@ CacheLookup macro
 >  rhs.name; }
 >     };
 > };
->
->
 > ```
 
 进入`MethodTableLookup`之后，调起了`__class_lookupMethodAndLoadCache3`，如下图
@@ -398,7 +391,7 @@ CacheLookup macro
 
 MethodTableLookup
 
-`__class_lookupMethodAndLoadCache3`是C方法，再次进入`_class_lookupMethodAndLoadCache3`方法，**注意，因为这里由汇编跳转到C，所以要全局搜索`_class_lookupMethodAndLoadCache3`，要删去一个`"_"`**,下面是`_class_lookupMethodAndLoadCache3`函数
+`__class_lookupMethodAndLoadCache3`是C方法，再次进入`_class_lookupMethodAndLoadCache3`方法，**注意，因为这里由汇编跳转到C，所以要全局搜索**`_class_lookupMethodAndLoadCache3`**，要删去一个**`"_"`,下面是`_class_lookupMethodAndLoadCache3`函数
 
 ```
 /***********************************************************************
@@ -427,7 +420,7 @@ cls
 ,
  obj
 ,
- 
+
                               YES
 /*initialize*/
 ,
@@ -457,14 +450,11 @@ realizeClass
 
 data赋值后走`_class_initialize`初始化cls，接下来开始`retry`操作。  
 **前方高能**  
-再次进行cache\_getImp，why？并发啊，还有重映射（在初始化init的时候有个remap（class）第一次通过汇编找不到，但是在加载类的时候对当前类进行重映射）  
-
+再次进行cache\_getImp，why？并发啊，还有重映射（在初始化init的时候有个remap（class）第一次通过汇编找不到，但是在加载类的时候对当前类进行重映射）
 
 ![](https://upload-images.jianshu.io/upload_images/5741330-cbe3379e8e73bf14.png?imageMogr2/auto-orient/strip|imageView2/2/w/827/format/webp)
 
 cache\_getImp
-
-
 
 接下来开始先在自己的class\_rw\_t的methods中根据sel查找方法返回method\_t
 
@@ -473,9 +463,6 @@ cache\_getImp
 method\_t
 
 如果拿到Method后保存到缓存中，保证以后调用可以直接走汇编的CacheHit快速查找，如果拿不到则继续从父类开始查找，直到找到NSObject\(因为NSObject的父类为nil\)，如果找到imp则一样保存在缓存中，如果到最后还是没有查找到，则进入动态方法解析。
-
-  
-
 
 ![](https://upload-images.jianshu.io/upload_images/5741330-348eeda298ad6d52.png?imageMogr2/auto-orient/strip|imageView2/2/w/864/format/webp)
 
@@ -489,14 +476,11 @@ method\_t
 
 动态方法解析
 
-首先执行`_class_resolveMethod`，这里会执行`+resolveClassMethod`或者`+resolveInstanceMethod`。  
-
+首先执行`_class_resolveMethod`，这里会执行`+resolveClassMethod`或者`+resolveInstanceMethod`。
 
 ![](https://upload-images.jianshu.io/upload_images/5741330-c5cda417fae04acb.png?imageMogr2/auto-orient/strip|imageView2/2/w/874/format/webp)
 
 class resolveMethod
-
-
 
 先判断当前cls是否为元类，如果是元类则执行`_class_resolveClassMethod`，再执行`_class_resolveInstanceMethod`，如果不是元类则直接执行`_class_resolveInstanceMethod`，`_class_resolveInstanceMethod`内部调用objc\_msgSend实现消息发送，对cls发送了`SEL_resolveInstanceMethod`类型的消息，所以在方法中会走到`resolveInstanceMethod`方法。
 
@@ -513,7 +497,6 @@ class resolveInstanceMethod
 ```
 - (void)run;
 + (void)eat;
-
 ```
 
 .m实现\(没有实现-run方法和+eat方法\)
@@ -1008,7 +991,7 @@ __func__
 )
 ;
 
-    
+
     NSString 
 *
 sto 
@@ -1067,5 +1050,5 @@ anInvocation invoke
 > Runtime就是C、C++、汇编实现的一套API，给OC增加的一个运行时功能，也就是我们平时所说的运行时。  
 > 在运行工程时工程会被装载到内存，来提供运行时功能。
 
-
+[^1]: Enter footnote here.
 
