@@ -60,10 +60,10 @@ dSYM文件是指具有调试信息的目标文件,在Products里面右击 Show i
 
 **3 生成符号表文件**
 
-**3.1下载最新版**[**Bugly iOS符号表工具**](https://link.jianshu.com/?t=https%3A%2F%2Fbugly.qq.com%2Fv2%2Fsdk%3Fid%3D37f16cf0-2020-4e30-9e8d-0f7de59cfe94)**    
+**3.1下载最新版**[**Bugly iOS符号表工具**](https://link.jianshu.com/?t=https%3A%2F%2Fbugly.qq.com%2Fv2%2Fsdk%3Fid%3D37f16cf0-2020-4e30-9e8d-0f7de59cfe94)**      
 **
 
-**    
+**      
 **
 
 ![](https://upload-images.jianshu.io/upload_images/2427846-b4ba58074f9dff24.png?imageMogr2/auto-orient/strip|imageView2/2/w/410/format/webp)
@@ -92,8 +92,6 @@ java -jar jar包路径 -i dSYM文件路径
 
 # iOS 集成 Bugly 二三事
 
-
-
 [Bugly 官网](https://bugly.qq.com/v2/index)
 
 > 腾讯Bugly，为移动开发者提供专业的异常上报和运营统计，帮助开发者快速发现并解决异常，同时掌握产品运营动态，及时跟进用户反馈。
@@ -120,12 +118,11 @@ Bugly/Bugly.h
 static NSString *const KBuglyAppId = @"**********"; 
 
 @implementation AppDelegate
-  
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Bugly startWithAppId:KBuglyAppId];
     return YES;
 }
-
 ```
 
 ### 方式二，官方文档中的"高级功能"
@@ -135,12 +132,12 @@ Bugly支持读取`Info.plist`文件读取SDK初始化参数，可配置的参数
 ```
 -
  Appid
-    
+
 -
  Key
 :
  BuglyAppIDString
-    
+
 -
  Value
 :
@@ -148,12 +145,12 @@ Bugly支持读取`Info.plist`文件读取SDK初始化参数，可配置的参数
 
 -
  渠道标识
-    
+
 -
  Key
 :
  BuglyAppChannelString
-    
+
 -
  Value
 :
@@ -161,12 +158,12 @@ Bugly支持读取`Info.plist`文件读取SDK初始化参数，可配置的参数
 
 -
  版本信息
-    
+
 -
  Key
 :
  BuglyAppVersionString
-    
+
 -
  Value
 :
@@ -174,17 +171,16 @@ Bugly支持读取`Info.plist`文件读取SDK初始化参数，可配置的参数
 
 -
  开启Debug信息显示
-    
+
 -
  Key
 :
  BuglyDebugEnable
-    
+
 -
  Value
 :
  BOOL类型
-
 ```
 
 我们设置`Info.plist`文件如下：
@@ -201,7 +197,6 @@ image
     [Bugly startWithAppId:nil];
     return YES;
 }
-
 ```
 
 以上方式初始化 Bugly 确实没问题，可是默认的`BuglyConfig`还有几个监控开关没开，我也想顺便开启一下：
@@ -209,7 +204,7 @@ image
 ```
 // 可能存在问题的代码
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
+
     BuglyConfig *config = [[BuglyConfig alloc] init];
     config.blockMonitorEnable = YES; // 卡顿监控开关，默认关闭
     config.blockMonitorTimeout = 5;
@@ -217,10 +212,9 @@ image
 
     // 读取Info.plist中的参数初始化SDK
     [Bugly startWithAppId:nil config:config];
-    
+
     return YES;
 }
-
 ```
 
 ⚠️ 注意，这样初始化就会有问题，如果配置了`Info.plist`字段，又在初始化时传入了自定义的`BuglyConfig`实例，那么在`Info.plist`中配置的`BuglyAppChannelString`、`BuglyAppVersionString`、`BuglyDebugEnable`会因为被覆盖而失效。
@@ -246,9 +240,9 @@ static NSString *const KBuglyAppId = @"**********";
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     [self p_configureForBugly]; 
-  
+
     return YES;
 }
 
@@ -269,10 +263,9 @@ static NSString *const KBuglyAppId = @"**********";
     config.debugMode = NO; // release 模式下，关闭调试模式
     config.reportLogLevel = BuglyLogLevelWarn; // 设置自定义日志上报的级别，默认不上报自定义日志
 #endif
-    
+
     [Bugly startWithAppId:KBuglyAppId config:config];
 }
-
 ```
 
 ⚠️ 如果你配置完 Bugly 之后，
@@ -283,7 +276,6 @@ BLYLogWarn(fmt, ...)
 BLYLogInfo(fmt, ...)
 BLYLogDebug(fmt, ...)
 BLYLogVerbose(fmt, ...)
-
 ```
 
 如上的日志不会在控制台输出，或者部分类型日志不会输出，那你应该注意到需要设置这段代码：
@@ -296,7 +288,6 @@ BLYLogVerbose(fmt, ...)
     config.debugMode = NO; // release 模式下，关闭调试模式
     config.reportLogLevel = BuglyLogLevelWarn; // 设置自定义日志上报的级别，默认不上报自定义日志
 #endif
-
 ```
 
 ## 关于 SDK 回调问题
@@ -321,7 +312,6 @@ NSObject
 - (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception;
 
 @end
-
 ```
 
 我遇到的问题是，出于代码清晰的目的，将应用初始化配置、第三方框架初始化配置、推送、分享相关的代码都放在分类中了：
@@ -336,7 +326,6 @@ image
 - (NSString * BLY_NULLABLE)attachmentForException:(NSException * BLY_NULLABLE)exception {
     return @"需要上传的数据...";
 }
-
 ```
 
 正常情况下，应用发生崩溃后，Bugly 会立即上报异常，同时在「崩溃分析」-「跟踪数据」-「附件信息」中显示回调方法中上传的数据文件**crash\_attach.log**：
@@ -345,7 +334,7 @@ image
 
 image
 
-实际上把回调代码写在分类中时，应用发生崩溃时，并不会触发协议方法。所以**务必要把所有与 Bugly 初始化及回调代码写在`AppDelegate.m`文件中**。
+实际上把回调代码写在分类中时，应用发生崩溃时，并不会触发协议方法。所以**务必要把所有与 Bugly 初始化及回调代码写在**`AppDelegate.m`**文件中**。
 
 最后，附上 Bugly 集成的完整正确代码示例：
 
@@ -372,9 +361,9 @@ BuglyDelegate
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     [self p_configureForBugly];
-  
+
     return YES;
 }
 
@@ -395,7 +384,7 @@ BuglyDelegate
     config.debugMode = NO; // release 模式下，关闭调试模式
     config.reportLogLevel = BuglyLogLevelWarn;
 #endif
-    
+
     [Bugly startWithAppId:KBuglyAppId config:config];
 }
 
@@ -408,7 +397,6 @@ BuglyDelegate
 }
 
 @end
-
 ```
 
 > 过早的优化是万恶之源。——[高德纳](https://en.wikipedia.org/wiki/Donald_Knuth#Computer_Programming_as_art_.281974.29)
@@ -758,7 +746,7 @@ Bugly 官网
 static NSString *const KBuglyAppId = @"**********"; 
 
 @implementation AppDelegate
-  
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Bugly startWithAppId:KBuglyAppId];
     return YES;
@@ -792,7 +780,7 @@ image
 
 // 可能存在问题的代码
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
+
     BuglyConfig *config = [[BuglyConfig alloc] init];
     config.blockMonitorEnable = YES; // 卡顿监控开关，默认关闭
     config.blockMonitorTimeout = 5;
@@ -800,7 +788,7 @@ image
 
     // 读取Info.plist中的参数初始化SDK
     [Bugly startWithAppId:nil config:config];
-    
+
     return YES;
 }
 ⚠️ 注意，这样初始化就会有问题，如果配置了Info.plist字段，又在初始化时传入了自定义的 BuglyConfig 实例，那么在 Info.plist 中配置的 BuglyAppChannelString、BuglyAppVersionString、BuglyDebugEnable 会因为被覆盖而失效。
@@ -820,9 +808,9 @@ static NSString *const KBuglyAppId = @"**********";
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     [self p_configureForBugly]; 
-  
+
     return YES;
 }
 
@@ -843,7 +831,7 @@ static NSString *const KBuglyAppId = @"**********";
     config.debugMode = NO; // release 模式下，关闭调试模式
     config.reportLogLevel = BuglyLogLevelWarn; // 设置自定义日志上报的级别，默认不上报自定义日志
 #endif
-    
+
     [Bugly startWithAppId:KBuglyAppId config:config];
 }
 ⚠️ 如果你配置完 Bugly 之后，
@@ -907,9 +895,9 @@ static NSString *const KBuglyAppId = @"**********";
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     [self p_configureForBugly];
-  
+
     return YES;
 }
 
@@ -930,7 +918,7 @@ static NSString *const KBuglyAppId = @"**********";
     config.debugMode = NO; // release 模式下，关闭调试模式
     config.reportLogLevel = BuglyLogLevelWarn;
 #endif
-    
+
     [Bugly startWithAppId:KBuglyAppId config:config];
 }
 
@@ -1039,11 +1027,11 @@ Bugly 官方文档
 ### 相关框架
 
 * [JJException](https://github.com/jezzmemo/JJException)
-  - 保护 Objective-C 应用不闪退的框架。
+  * 保护 Objective-C 应用不闪退的框架。
 * [KSCrash](https://github.com/kstenerud/KSCrash)
-  - iOS崩溃报告框架
+  * iOS崩溃报告框架
 * [PLCrashReporter](https://www.plcrashreporter.org/)
-  - Reliable, open-source crash reporting for iOS and Mac OS X.
+  * Reliable, open-source crash reporting for iOS and Mac OS X.
 
 ### 参考
 
