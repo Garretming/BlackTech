@@ -26,7 +26,7 @@
 * house
   * [买房.md](book/house/买房.md)
   * [工具使用](book/house/室内设计.md)
-* ios
+* [ios](ios.md)
   * [1、开发证书配置.md](book/ios/1、开发证书配置.md)
   * [2、创建工程.md](book/ios/2、创建工程.md)
   * [3、文本处理.md](book/ios/3、文本处理.md)
