@@ -1,0 +1,1969 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python脚本生成iOS全套AppIcon图标 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Clark">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-copyright/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="3、文本处理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">book</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    gitbook
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../gitbook/advanced.html">
+            
+                <a href="../gitbook/advanced.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    advanced.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../gitbook/bookjson.html">
+            
+                <a href="../gitbook/bookjson.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    book.json配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../gitbook/build.html">
+            
+                <a href="../gitbook/build.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    npm install gitbook-plugin-插件名,
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../gitbook/commands.html">
+            
+                <a href="../gitbook/commands.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../gitbook/create.html">
+            
+                <a href="../gitbook/create.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    项目搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../gitbook/gitbook-plug.html">
+            
+                <a href="../gitbook/gitbook-plug.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    h1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../gitbook/gitbookpei-zhi.html">
+            
+                <a href="../gitbook/gitbookpei-zhi.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../gitbook/gulpfile.html">
+            
+                <a href="../gitbook/gulpfile.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    gulpfile.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../gitbook/installation.html">
+            
+                <a href="../gitbook/installation.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    GitBook安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../gitbook/introduction.html">
+            
+                <a href="../gitbook/introduction.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../gitbook/plugins.html">
+            
+                <a href="../gitbook/plugins.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    GitBook 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../gitbook/run.html">
+            
+                <a href="../gitbook/run.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    运行部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../gitbook/settings.html">
+            
+                <a href="../gitbook/settings.html">
+            
+                    
+                        <b>1.2.13.</b>
+                    
+                    GitBook配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../gitbook/structure.html">
+            
+                <a href="../gitbook/structure.html">
+            
+                    
+                        <b>1.2.14.</b>
+                    
+                    目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../gitbook/test.html">
+            
+                <a href="../gitbook/test.html">
+            
+                    
+                        <b>1.2.15.</b>
+                    
+                    项目介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../gitbook/themes.html">
+            
+                <a href="../gitbook/themes.html">
+            
+                    
+                        <b>1.2.16.</b>
+                    
+                    主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../gitbook/update.html">
+            
+                <a href="../gitbook/update.html">
+            
+                    
+                        <b>1.2.17.</b>
+                    
+                    更新文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../gitbook/使用教程.html">
+            
+                <a href="../gitbook/使用教程.html">
+            
+                    
+                        <b>1.2.18.</b>
+                    
+                    gitbook - 新的文档书写方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../gitbook/根据目录生成summary.html">
+            
+                <a href="../gitbook/根据目录生成summary.html">
+            
+                    
+                        <b>1.2.19.</b>
+                    
+                    使用插件生成SUMMARY.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    house
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../house/买房.html">
+            
+                <a href="../house/买房.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    买房.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../house/室内设计.html">
+            
+                <a href="../house/室内设计.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    工具使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    ios
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="1、开发证书配置.html">
+            
+                <a href="1、开发证书配置.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    1、开发证书配置.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="2、创建工程.html">
+            
+                <a href="2、创建工程.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    2、创建工程.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3、文本处理.html">
+            
+                <a href="3、文本处理.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    3、文本处理.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="appicon.html">
+            
+                <a href="appicon.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    Python脚本生成iOS全套AppIcon图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    assets
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="connerstonmd.html">
+            
+                <a href="connerstonmd.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    !
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="gitbookpei-zhi.html">
+            
+                <a href="gitbookpei-zhi.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="launch-image.html">
+            
+                <a href="launch-image.html">
+            
+                    
+                        <b>1.4.8.</b>
+                    
+                    iOS.11后的 iOS LaunchImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mac快捷键.html">
+            
+                <a href="mac快捷键.html">
+            
+                    
+                        <b>1.4.9.</b>
+                    
+                    mac快捷键.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="ttmd.html">
+            
+                <a href="ttmd.html">
+            
+                    
+                        <b>1.4.10.</b>
+                    
+                    ttmd.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="xcodebao-cuo-ji-zhong.html">
+            
+                <a href="xcodebao-cuo-ji-zhong.html">
+            
+                    
+                        <b>1.4.11.</b>
+                    
+                    xcodebao-cuo-ji-zhong.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="xiang-mu-gou-jian-liu-cheng.html">
+            
+                <a href="xiang-mu-gou-jian-liu-cheng.html">
+            
+                    
+                        <b>1.4.12.</b>
+                    
+                    问题一：Safe Area Layout Guide before iOS 9.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="xiang-mu-gou-jian.html">
+            
+                <a href="xiang-mu-gou-jian.html">
+            
+                    
+                        <b>1.4.13.</b>
+                    
+                    正确设置info.plilst的位置方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="工程清理.html">
+            
+                <a href="工程清理.html">
+            
+                    
+                        <b>1.4.14.</b>
+                    
+                    iOS APP瘦身 清除无用图片资源和import的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="开发中的快捷键.html">
+            
+                <a href="开发中的快捷键.html">
+            
+                    
+                        <b>1.4.15.</b>
+                    
+                    开发中的快捷键.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="正则表达式.html">
+            
+                <a href="正则表达式.html">
+            
+                    
+                        <b>1.4.16.</b>
+                    
+                    正则表达式.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="测试.html">
+            
+                <a href="测试.html">
+            
+                    
+                        <b>1.4.17.</b>
+                    
+                    app性能测试简要步骤：
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="问题集合.html">
+            
+                <a href="问题集合.html">
+            
+                    
+                        <b>1.4.18.</b>
+                    
+                    问题一：Safe Area Layout Guide before iOS 9.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="项目兼容性.html">
+            
+                <a href="项目兼容性.html">
+            
+                    
+                        <b>1.4.19.</b>
+                    
+                    项目兼容性.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    os
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../os/knowledge.html">
+            
+                <a href="../os/knowledge.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    知识库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../os/linux/linux.html">
+            
+                <a href="../os/linux/linux.html">
+            
+                    
+                        <b>1.5.2.1.</b>
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    mac
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.1.</b>
+                    
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1.1" data-path="../os/mac/git/git.html">
+            
+                <a href="../os/mac/git/git.html">
+            
+                    
+                        <b>1.5.3.1.1.</b>
+                    
+                    Git 创建分支提交远程分支详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../os/mac/mac.html">
+            
+                <a href="../os/mac/mac.html">
+            
+                    
+                        <b>1.5.3.2.</b>
+                    
+                    Mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../os/mac/npm.html">
+            
+                <a href="../os/mac/npm.html">
+            
+                    
+                        <b>1.5.3.3.</b>
+                    
+                    npm.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../os/os.html">
+            
+                <a href="../os/os.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    unix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../os/unix/unix.html">
+            
+                <a href="../os/unix/unix.html">
+            
+                    
+                        <b>1.5.5.1.</b>
+                    
+                    Unix
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    win
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../os/win/windows.html">
+            
+                <a href="../os/win/windows.html">
+            
+                    
+                        <b>1.5.6.1.</b>
+                    
+                    windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../taobao/">
+            
+                <a href="../taobao/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    taobao
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../taobao/SUMMARY.html">
+            
+                <a href="../taobao/SUMMARY.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    assets
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../taobao/ps-2019cc.html">
+            
+                <a href="../taobao/ps-2019cc.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    ps-2019cc.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../taobao/产品归类.html">
+            
+                <a href="../taobao/产品归类.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    产品归类.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../taobao/六大茶叶种类.html">
+            
+                <a href="../taobao/六大茶叶种类.html">
+            
+                    
+                        <b>1.6.5.</b>
+                    
+                    六大茶叶种类.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../taobao/六大茶类分类法.html">
+            
+                <a href="../taobao/六大茶类分类法.html">
+            
+                    
+                        <b>1.6.6.</b>
+                    
+                    六大茶类分类法.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../taobao/单丛茶.html">
+            
+                <a href="../taobao/单丛茶.html">
+            
+                    
+                        <b>1.6.7.</b>
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../taobao/大乌叶，鸭屎香.html">
+            
+                <a href="../taobao/大乌叶，鸭屎香.html">
+            
+                    
+                        <b>1.6.8.</b>
+                    
+                    单丛茶中的两颗明珠：大乌叶，鸭屎香！
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../taobao/客家炒茶做法.html">
+            
+                <a href="../taobao/客家炒茶做法.html">
+            
+                    
+                        <b>1.6.9.</b>
+                    
+                    客家炒茶做法.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../taobao/店招.html">
+            
+                <a href="../taobao/店招.html">
+            
+                    
+                        <b>1.6.10.</b>
+                    
+                    店招
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../taobao/淘宝店铺可行性报告.html">
+            
+                <a href="../taobao/淘宝店铺可行性报告.html">
+            
+                    
+                        <b>1.6.11.</b>
+                    
+                    淘宝店铺可行性报告.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../taobao/淘宝开店高质量宝贝发布技巧.html">
+            
+                <a href="../taobao/淘宝开店高质量宝贝发布技巧.html">
+            
+                    
+                        <b>1.6.12.</b>
+                    
+                    淘宝开店高质量宝贝发布技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../taobao/淘宝现有茶叶品种.html">
+            
+                <a href="../taobao/淘宝现有茶叶品种.html">
+            
+                    
+                        <b>1.6.13.</b>
+                    
+                    淘宝现有茶叶品种.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../taobao/茶叶的基本分类.html">
+            
+                <a href="../taobao/茶叶的基本分类.html">
+            
+                    
+                        <b>1.6.14.</b>
+                    
+                    茶叶的基本分类【图解】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../taobao/茶坨,茶饼、砖茶、散茶和袋泡茶.html">
+            
+                <a href="../taobao/茶坨,茶饼、砖茶、散茶和袋泡茶.html">
+            
+                    
+                        <b>1.6.15.</b>
+                    
+                    茶坨,茶饼、砖茶、散茶和袋泡茶.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../taobao/金骏眉.html">
+            
+                <a href="../taobao/金骏眉.html">
+            
+                    
+                        <b>1.6.16.</b>
+                    
+                    金骏眉.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">res</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                        <b>2.1.</b>
+                    
+                    fonts
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                        <b>2.2.</b>
+                    
+                    i18n
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                        <b>2.3.</b>
+                    
+                    images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                        <b>2.4.</b>
+                    
+                    videos
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">src</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    bin
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    css
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    dist
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    etc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                        <b>3.5.</b>
+                    
+                    html
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" >
+            
+                <span>
+            
+                    
+                        <b>3.5.1.</b>
+                    
+                    ebook
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" >
+            
+                <span>
+            
+                    
+                        <b>3.5.2.</b>
+                    
+                    include
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" >
+            
+                <span>
+            
+                    
+                        <b>3.5.3.</b>
+                    
+                    website
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <span>
+            
+                    
+                        <b>3.6.</b>
+                    
+                    images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" >
+            
+                <span>
+            
+                    
+                        <b>3.7.</b>
+                    
+                    js
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" >
+            
+                <span>
+            
+                    
+                        <b>3.7.1.</b>
+                    
+                    core
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" >
+            
+                <span>
+            
+                    
+                        <b>3.7.2.</b>
+                    
+                    theme
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" >
+            
+                <span>
+            
+                    
+                        <b>3.8.</b>
+                    
+                    less
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" >
+            
+                <span>
+            
+                    
+                        <b>3.8.1.</b>
+                    
+                    base
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" >
+            
+                <span>
+            
+                    
+                        <b>3.8.2.</b>
+                    
+                    ebook
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.3" >
+            
+                <span>
+            
+                    
+                        <b>3.8.3.</b>
+                    
+                    website
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" >
+            
+                <span>
+            
+                    
+                        <b>3.9.</b>
+                    
+                    scss
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Python脚本生成iOS全套AppIcon图标</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;appicon&#xFF08;app&#x56FE;&#x6807;&#xFF09;"><b></b>Mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;AppIcon&#xFF08;App&#x56FE;&#x6807;&#xFF09;</a></li></ul></div><a href="#mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;appicon&#xFF08;app&#x56FE;&#x6807;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="python&#x811A;&#x672C;&#x751F;&#x6210;ios&#x5168;&#x5957;appicon&#x56FE;&#x6807;&#x8BC4;&#x5206;"><a name="python&#x811A;&#x672C;&#x751F;&#x6210;ios&#x5168;&#x5957;appicon&#x56FE;&#x6807;&#x8BC4;&#x5206;" class="anchor-navigation-ex-anchor" href="#python&#x811A;&#x672C;&#x751F;&#x6210;ios&#x5168;&#x5957;appicon&#x56FE;&#x6807;&#x8BC4;&#x5206;"><i class="fa fa-link" aria-hidden="true"></i></a>Python&#x811A;&#x672C;&#x751F;&#x6210;iOS&#x5168;&#x5957;AppIcon&#x56FE;&#x6807;<em>&#x8BC4;&#x5206;:</em></h3>
+<p>python appicon.py ./src.png &#x7B2C;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x53EF;&#x80FD;&#x4F1A;&#x9700;&#x8981;&#x5B89;&#x88C5;Image&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x8981;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#x3002;&#x6240;&#x4EE5;&#x7B2C;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x6700;&#x597D;&#x52A0;&#x4E00;&#x4E2A;sudo python3 appicon.py ./src.png &#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x5939;AppIcon.appiconset&#x76F4;&#x63A5;&#x66FF;&#x6362;&#x6389;&#x9879;&#x76EE;&#x4E2D;Assets.xcassets&#x91CC;&#x9762;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x5373;&#x53EF;&#x3002; XCode9, XCode10 beta6&#x4E0B;&#x6D4B;&#x8BD5;&#x67D0;&#x95EE;&#x9898;</p>
+<h1 id="mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;appicon&#xFF08;app&#x56FE;&#x6807;&#xFF09;"><a name="mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;appicon&#xFF08;app&#x56FE;&#x6807;&#xFF09;" class="anchor-navigation-ex-anchor" href="#mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;appicon&#xFF08;app&#x56FE;&#x6807;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>Mac&#x5FEB;&#x901F;&#x5236;&#x4F5C;AppIcon&#xFF08;App&#x56FE;&#x6807;&#xFF09;</h1>
+<p>App Icon Gear&#x53EA;&#x9700;&#x8981;&#x4E00;&#x5F20;1024*1024&#x7684;&#x539F;&#x56FE;&#x5373;&#x53EF;&#x751F;&#x6210;&#x4E00;&#x5957;&#x56FE;&#x6807;</p>
+<p>&#x7531;&#x4E8E;&#x516C;&#x53F8;&#x6CA1;&#x6709;&#x7F8E;&#x5DE5;&#xFF0C;&#x6240;&#x4EE5;app&#x7684;&#x8BBE;&#x8BA1;&#x3001;Icon&#x3001;&#x542F;&#x52A8;&#x56FE;&#x7247;&#x3001;&#x6B22;&#x8FCE;&#x56FE;&#x3001;&#x6309;&#x94AE;&#x56FE;&#x6807;&#x7B49;&#xFF0C;&#x90FD;&#x8981;&#x81EA;&#x5DF1;&#x5236;&#x4F5C;&#x3002;<br>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x6211;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x6BD4;&#x8F83;&#x5FEB;&#x901F;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x505A;&#xFF1A;Keynote&#xFF08;&#x4E5F;&#x5C31;&#x662F;PPT&#xFF09;&#x3002;</p>
+<blockquote>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;Keynote&#x753B;&#x56FE;<br>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6279;&#x91CF;&#x526A;&#x88C1;&#x56FE;&#x6807;</p>
+</blockquote>
+<h4 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;keynote&#x753B;&#x56FE;"><a name="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;keynote&#x753B;&#x56FE;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;keynote&#x753B;&#x56FE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;Keynote&#x753B;&#x56FE;</h4>
+<p><a href="https://upload-images.jianshu.io/upload_images/3128629-4346910e5827fedf.png?imageMogr2/auto-orient/strip|imageView2/2/w/160/format/webp" data-lightbox="fc049f80-2824-466c-81e6-81ac7bf93327" data-title="" target="_blank"><img src="https://upload-images.jianshu.io/upload_images/3128629-4346910e5827fedf.png?imageMogr2/auto-orient/strip|imageView2/2/w/160/format/webp" alt=""></a></p>
+<p><a href="https://upload-images.jianshu.io/upload_images/3128629-22771c90cfc4016b.png?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp" data-lightbox="46045682-8e38-4417-9761-e910fb0c2826" data-title="" target="_blank"><img src="https://upload-images.jianshu.io/upload_images/3128629-22771c90cfc4016b.png?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp" alt=""></a></p>
+<p>&#x6253;&#x5F00;Keynote&#xFF0C;&#x9009;&#x62E9;&#x201C;&#x5F62;&#x72B6;&#x201D;&#x91CC;&#x9762;&#x7684;&#x65B9;&#x6846;&#x529F;&#x80FD;&#xFF0C;&#x753B;&#x4E00;&#x4E2A;514 * 514&#x7684;&#x65B9;&#x6846;&#x4F5C;&#x4E3A;&#x56FE;&#x6807;&#x7684;&#x5E95;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x53F3;&#x8FB9;&#x8BBE;&#x8BA1;&#x533A;&#x586B;&#x5145;&#x80CC;&#x666F;&#x989C;&#x8272;&#x7B49;&#x7B49;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x505A;&#x51FA;&#x6E10;&#x53D8;&#x8272;&#x7B49;&#x6548;&#x679C;&#x3002;<br>&#x7136;&#x540E;&#x518D;&#x52A0;&#x4E0A;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5229;&#x7528;&#x76F4;&#x7EBF;&#x3001;&#x66F2;&#x7EBF;&#x3001;&#x586B;&#x5145;&#x3001;&#x6E10;&#x53D8;&#x3001;&#x9634;&#x5F71;&#x5C31;&#x5DEE;&#x4E0D;&#x591A;&#x4E86;&#x3002;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x5927;&#x5C0F;&#x8981;&#x662F;514 * 514&#x5462;&#xFF1F;<br>&#x56E0;&#x4E3A;&#x7B49;&#x4F60;&#x8BBE;&#x8BA1;&#x5B8C;&#x4F60;&#x7684;&#x56FE;&#x6807;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x7528;&#x622A;&#x56FE;&#x5DE5;&#x5177;&#x622A;&#x56FE;&#xFF0C;&#x622A;&#x4E00;&#x4E2A;512 * 512&#x5927;&#x5C0F;&#x7684;&#x56FE;&#x7247;&#x4FDD;&#x5B58;&#xFF0C;&#x8FD9;&#x6837;&#x56FE;&#x7247;&#x7684;&#x50CF;&#x7D20;&#x624D;&#x80FD;&#x662F;1024*1024&#x7684;&#xFF0C;&#x7B26;&#x5408;App Store&#x4E0A;&#x67B6;app&#x7684;&#x89C4;&#x8303;&#x3002;<br>&#x800C;&#x76F4;&#x63A5;&#x753B;&#x4E2A;512 * 512 &#x7684;&#x5E95;&#x622A;&#x56FE;&#x65F6;&#x4F1A;&#x53D1;&#x73B0;&#x5C11;&#x4E24;&#x4E2A;&#x50CF;&#x7D20;&#x3002;</p>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x628A;&#x56FE;&#x6807;&#x4FDD;&#x5B58;&#x5230;&#x672C;&#x5730;&#x540E;&#xFF0C;&#x8FD8;&#x8981;&#x6253;&#x5F00;&#x56FE;&#x7247;&#xFF0C;&#x518D;&#x5BFC;&#x51FA;&#x4E00;&#x6B21;&#xFF0C;&#x53D6;&#x6D88;&#x56FE;&#x7247;&#x7684;Alpha&#x901A;&#x9053;&#xFF0C;&#x7B26;&#x5408;App Store&#x4E0A;&#x67B6;app&#x7684;&#x89C4;&#x8303;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x770B;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x5C31;&#x4E0D;&#x91CD;&#x590D;&#x5199;&#x4E86;&#xFF1A;<a href="https://link.jianshu.com/?t=http://blog.csdn.net/qq_28142539/article/details/51127560" target="_blank">iOS &#x4E0A;&#x67B6;&#xFF08;&#x5C0F;&#x95EE;&#x9898;&#xFF09;&#x53BB;&#x9664;&#x56FE;&#x50CF;&#x4E2D;&#x7684;alpha&#x901A;&#x9053;&#x6216;&#x900F;&#x660E;&#x5EA6;</a></p>
+<h4 id="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6279;&#x91CF;&#x526A;&#x88C1;&#x56FE;&#x6807;"><a name="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6279;&#x91CF;&#x526A;&#x88C1;&#x56FE;&#x6807;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6279;&#x91CF;&#x526A;&#x88C1;&#x56FE;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x6279;&#x91CF;&#x526A;&#x88C1;&#x56FE;&#x6807;</h4>
+<p>&#x6279;&#x91CF;&#x88C1;&#x526A;&#x56FE;&#x6807;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;</p>
+<h6 id="&#x4E00;&#x79CD;&#x662F;&#x88C1;&#x526A;&#x56FE;&#x6807;&#x7F51;&#x7AD9;&#xFF1A;"><a name="&#x4E00;&#x79CD;&#x662F;&#x88C1;&#x526A;&#x56FE;&#x6807;&#x7F51;&#x7AD9;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x79CD;&#x662F;&#x88C1;&#x526A;&#x56FE;&#x6807;&#x7F51;&#x7AD9;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x79CD;&#x662F;&#x88C1;&#x526A;&#x56FE;&#x6807;&#x7F51;&#x7AD9;&#xFF1A;</h6>
+<p><a href="https://link.jianshu.com/?t=http://www.atool.org/ios_logo.php" target="_blank">&#x5728;&#x7EBF;&#x6279;&#x91CF;&#x526A;&#x88C1;&#x5404;&#x79CD;&#x5C3A;&#x5BF8;iOS&#x3001;Android APP LOGO&#x56FE;&#x6807; - aTool&#x5728;&#x7EBF;&#x5DE5;&#x5177;</a><br><a href="https://link.jianshu.com/?t=http://icon.wuruihong.com/" target="_blank">&#x56FE;&#x6807;&#x5DE5;&#x573A;</a>&#x7B49;&#x7B49;&#x4E00;&#x5927;&#x628A;...&#x8DDF;&#x7740;&#x7F51;&#x7AD9;&#x91CC;&#x9762;&#x7684;&#x8BF4;&#x660E;&#x64CD;&#x4F5C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<h6 id="&#x4E00;&#x79CD;&#x662F;&#x7528;app&#xFF1A;"><a name="&#x4E00;&#x79CD;&#x662F;&#x7528;app&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x79CD;&#x662F;&#x7528;app&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x79CD;&#x662F;&#x7528;app&#xFF1A;</h6>
+<p>&#x6BD4;&#x5982;App Icon Gear&#x3001;Appicon and Launchimage Maker&#x3001;DevelopersTools&#x3001;APP Image Resizer&#x3001;Prepo&#x7B49;&#x7B49;&#x4E00;&#x5927;&#x628A;...</p>
+<p><a href="https://upload-images.jianshu.io/upload_images/3128629-f99f7e47efef292c.png?imageMogr2/auto-orient/strip|imageView2/2/w/160/format/webp" data-lightbox="a6d12aaf-a3cd-4e59-823b-fddc9b3553a1" data-title="" target="_blank"><img src="https://upload-images.jianshu.io/upload_images/3128629-f99f7e47efef292c.png?imageMogr2/auto-orient/strip|imageView2/2/w/160/format/webp" alt=""></a></p>
+<p>&#x8FD9;&#x4E2A;app&#x53EF;&#x4EE5;&#x5728;App Store&#x91CC;&#x9762;&#x4E0B;&#x8F7D;&#xFF0C;&#x867D;&#x7136;&#x662F;&#x82F1;&#x6587;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x64CD;&#x4F5C;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x628A;&#x7B2C;&#x4E00;&#x6B65;&#x505A;&#x597D;&#x7684;&#x56FE;&#x6807;&#x62D6;&#x8FDB;&#x4E3B;&#x754C;&#x9762;&#xFF0C;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x5404;&#x79CD;&#x6BD4;&#x4F8B;&#x5927;&#x5C0F;&#x7684;&#x56FE;&#x6807;&#x4E86;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x9884;&#x89C8;&#x6548;&#x679C;&#xFF0C;&#x4E0D;&#x6EE1;&#x610F;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x7B2C;&#x4E00;&#x6B65;&#x5236;&#x4F5C;&#x3002;</p>
+<p><a href="https://upload-images.jianshu.io/upload_images/3128629-51b4aee7a73516b0.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" data-lightbox="27f2a29f-d812-4498-823b-899b429a2c6a" data-title="" target="_blank"><img src="https://upload-images.jianshu.io/upload_images/3128629-51b4aee7a73516b0.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" alt=""></a></p>
+<p>&#x7136;&#x540E;&#x70B9;&#x51FB;&#x53F3;&#x4E0A;&#x89D2;&#x7684;Export&#x5BFC;&#x51FA;&#x5230;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x518D;&#x6839;&#x636E;&#x5927;&#x5C0F;&#x62D6;&#x5230;Xcode&#x91CC;&#x9762;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; clark-xm.xyz 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;:
+2019-10-17 18:07:46
+</span></footer> 
+
+<footer class="footer"><div class="footer__container--normal" alt="
+https://github.com/skyFibook/ios/appicon.html
+">
+<a href="../../gif;base64,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" data-lightbox="2abd7c0b-07c2-4bc0-9157-647ae12abab8" data-title="undefined"><img src="data:image/gif;base64,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" width="170" height="170"></a>
+<div class="footer__description--normal"><p class="paragraph footer__author--normal" style="color: #000 !important;">clark<sup class="super">&#xAE;</sup></p><p class="paragraph footer__quote--normal" style="color: #000 !important;">Designer, Frontend Developer &amp; overall web enthusiast</p><div class="footer__main--normal"><p class="paragraph footer__main__paragraph--normal copyright" style="color: #666 !important;">Copyright &#xA9; clark all right reserved, powered by <a href="https://github.com/skyFi" target="_blank">skyFi</a></p><p class="paragraph footer__main__paragraph--normal footer__modifyTime--normal" style="color: #666 !important;"><span style="color: #666 !important;">modified at</span>
+2019-10-17 18:07:46
+</p></div></div></div><div class="box__issues">
+
+</div></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Python脚本生成iOS全套AppIcon图标","level":"1.4.4","depth":2,"next":{"title":"assets","level":"1.4.5","depth":2,"ref":"","articles":[]},"previous":{"title":"3、文本处理.md","level":"1.4.3","depth":2,"path":"book/ios/3、文本处理.md","ref":"book/ios/3、文本处理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","theme-comscore","theme-default","theme-faq","search-pro","-insert-logo","-highlight","prism","prism-themes","code","copy-code-button","github","-lunr","-search","search-plus","-back-to-top-button","-page-toc-button","simple-page-toc","chapter-fold","-expandable-chapters-small","-page-treeview","-expandable-chapters","advanced-emoji","emphasize","splitter","-sharing","sharing-plus","tbfed-pagefooter","page-copyright","sectionx","-fontsettings","ancre-navigation","klipse","donate","change_girls","alerts","pageview-count","auto-scroll-table","popup","lightbox","click-reveal","custom-favicon","-gitalk","-disqus","-theme-official","-sitemap-general","-terminal","versions-select","-rss","include-codeblock","ace","edit-link","-musicxml","local-video","summary","livereload"],"styles":{"website":"./res/website/website.css","ebook":"./res/website/ebook.css","pdf":"./res/website/pdf.css","mobi":"./res/website/mobi.css","epub":"./res/website/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy clark-xm.xyz 2019","modify_label":"该文件修订时间:","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["summary","toggle-chapters","theme-comscore"],"page-treeview":{"copyright":"Copyright &#169; clark","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/Garretming/BlackTech"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"summary":{},"splitter":{},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2",""]},"search-pro":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; clark","styles (normal, symmetrical)":"normal","style":"normal","isShowQRCode":true,"timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"clark","baseUri":"https://github.com/skyFi","copyrightColor":"#666","description":"modified at"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":false},"versions-select":{"type":"branches"},"donate":{"alipay":"./res/images/qr-alipay-255.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"./res/images/qr-wechat-255.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://clark-xm.xyz/"},"hide-element":{"elements":[".gitbook-link"]},"theme-faq":{},"fontsettings":{"theme":"sepia","family":"serif","size":1},"rss":{"title":"GitBook 使用教程","description":"记录 GitBook 的配置和一些插件的使用","author":"clark","feed_url":"http://gitbook.clark-xm.xyz/rss","site_url":"http://gitbook.clark-xm.xyz/","managingEditor":"me@clark-xm.xyz","webMaster":"me@clark-xm.xyz","categories":["gitbook"]},"click-reveal":{},"sectionx":{"tag":"b"},"favicon":"./res/images/favicon.ico","lightbox":{"jquery":true},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"theme-api":{"languages":[],"split":true,"theme":"dark"},"back-to-top-button":{},"pageview-count":{},"prism-themes":{},"alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"flexible-alerts":{"style":"callout","comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"value":"http://gitbook.clark-xm.xyz","text":"v3.2.3"},{"value":"http://gitbook.clark-xm.xyz/v2/","text":"v2.6.4"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"label":"Edit This Page","base":"https://github.com/Garretming/BlackTech/edit/master"},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"url":"./res/images/logo.png","style":"background: none; max-height: 30px; min-height: 30px"},"search-plus":{}},"theme":"default","head_keywords":"界面交互，策划文案，开发协议，开发记录","author":"Clark","titl":"BlackTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","output.name":"site","head_title":"开发记录","links":{"siderbar":"clark-xm.xyz"},"gitbook":"*","description":"日常工作记录","head_description":"开发过程中的文档记录"},"file":{"path":"book/ios/appicon.md","mtime":"2019-10-17T10:07:46.223Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T13:15:27.002Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

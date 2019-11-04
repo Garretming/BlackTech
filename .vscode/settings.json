@@ -1,0 +1,273 @@
+{
+    ////c
+    "files.associations": {
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "lua.h": "c",
+        "*.vue": "vue"
+    },
+    ////typescript
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.tsc.autoDetect": "off",
+    // "grunt.autoDetect": "off",
+    "jake.autoDetect": "off",
+    // "gulp.autoDetect": "off",
+    "npm.autoDetect": "off",
+    "python.formatting.provider": "black",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "editor.renderLineHighlight": "gutter",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 300,
+    "editor.wrappingIndent": "same",
+    "editor.renderControlCharacters": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.ignoreLimitWarning": true,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "frameworks/runtime-src/proj.android_no_anysdk/assets": true,
+        "_book": true,
+        "_assets": true,
+        "res--": true,
+        "src--": true,
+        // "entry": true,
+        // "assest": true,
+        // "CDN/": true,
+        // "cos_sync": true,
+        // "HeishanTools_Font": true,
+        // // "node_modules": true,
+        // // "updateUtils": true,
+        // "云盾说明": true,
+        // "项目说明": true,
+        // "runtime": true,
+       
+        "**/*.meta": true,
+        // "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true
+        // "library/": true,
+        // "local/": true,
+        // "temp/": true,
+    },
+    "luaide.scriptRoots": [
+        // "/Users/yuxixi/work/games/ccs-316"
+    ],
+    // luaide 模板文件夹
+    "luaide.luaTemplatesDir": "",
+    // luaide 宏变量申明
+    "luaide.macroList": [
+        {
+            "author": "CLark",
+            "value": "HIHI",
+            // "Date" :${time},
+        },
+    ],
+    // 填入相对路径,${workspaceRoot} 或绝对路径忽略的文件夹集合,不会对忽略文件夹中的脚本进行分析
+    "luaide.ignoreDir": [],
+    // 填入相对路径,${workspaceRoot} 或绝对路径的文件名,不会对忽略文件夹中的脚本进行分析
+    "luaide.ignoreFiles": [],
+    // 满足模板创建时文件名和moduleName不同,false为文件和moduleName相同,true为不相同会在创建模板时多输入一个moduleName
+    "luaide.inputTemplateModuleName": false,
+    // 全局变量颜色
+    "luaide.golbalFieldColor": "#00ff00",
+    // 全局方法颜色
+    "luaide.golbalFunColor": "#00FF00",
+    "luaide.apiType": "cocos2dx",
+    "markdown.preview.markEditorSelection": false,
+    "search.usePCRE2": false, //--------此东东一定要关闭，擦
+    "search.useIgnoreFiles": true,
+    // 若搜索词全为小写，则不区分大小写进行搜索，否则区分大小写进行搜索
+    "search.smartCase": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true,
+        "res--": true,
+        // "entry": true,
+        "src--": true,
+        "runtime": true,
+        "frameworks/runtime-src/proj.android_no_anysdk/assets": true,
+        "frameworks/runtime-src/proj.android/assets": true,
+        "build/": true,
+        "CDN/": true,
+        // "temp/": true,
+        "library/": true,
+        "**/*.anim": true,
+    },
+    "window.zoomLevel": 1,
+    // 图标
+    // "workbench.iconTheme": "vscode-icons",
+    "workbench.activityBar.visible": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "editor.accessibilitySupport": "off",
+    // "view-in-browser.customBrowser": "chrome",
+    "search.location": "panel",
+    // "gitlens.historyExplorer.enabled": true,
+    "terminal.integrated.rendererType": "dom",
+    // Glob patterns that defines the files to search for. Only include files you need, DO NOT USE `{**/*.*}` for both permormance and avoiding binary files reason.
+    // "todohighlight.include": [
+    //     // "**/*.js",
+    //     "**/*.jsx",
+    //     "**/*.ts",
+    //     "**/*.tsx",
+    //     "**/*.html",
+    //     "**/*.php",
+    //     "**/*.css",
+    //     "**/*.scss",
+    //     "**/*.lua"
+    // ],
+    //////----------vscode设置同步工具
+    // "sync.gist": "e7e8dfee3ed54822651251152af04931",
+    // "sync.host": "",
+    // "sync.pathPrefix": "",
+    // "sync.quietSync": false,
+    // "sync.askGistName": false,
+    // "sync.removeExtensions": true,
+    // "sync.syncExtensions": true,
+    // "sync.autoDownload": false,
+    // "sync.autoUpload": false,
+    // "sync.lastUpload": "2018-08-01T11:21:43.142Z",
+    // "sync.lastDownload": "",
+    // "sync.forceDownload": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.eol": "\n",
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    },
+    // 插入信息头   By default, common template. Do not modify it!!!!!
+    // "fileheader.Author": "Clark",
+    // // "fileheader.LastModifiedBy": "Clark",
+    // "fileheader.tpl": "--[[\r\n  @Author: {author} \r\n  @Date: {createTime} \r\n  @Directions:   \r\n--]]\r\n",
+    // "vsicons.dontShowNewVersionMessage": true,
+    // "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    // Latex workshop    // ctrl+alt+b编译，ctrl+alt+t查看。
+    // "latex-workshop.latex.recipes": [
+    //     {
+    //         "name": "texify", //放在最前面为默认编译方案, 适用于MikTex
+    //         "tools": [
+    //             "texify"
+    //         ]
+    //     },
+    //     {
+    //         "name": "xelatex",
+    //         "tools": [
+    //             "xelatex"
+    //         ]
+    //     },
+    //     {
+    //         "name": "xe->bib->xe->xe",
+    //         "tools": [
+    //             "xelatex",
+    //             "bibtex",
+    //             "xelatex",
+    //             "xelatex"
+    //         ]
+    //     }
+    // ],
+    // "latex-workshop.latex.tools": [
+    //     {
+    //         "name": "texify",
+    //         "command": "texify",
+    //         "args": [
+    //             "--synctex",
+    //             "--pdf",
+    //             "--tex-option=\"-interaction=nonstopmode\"",
+    //             "--tex-option=\"-file-line-error\"",
+    //             "%DOC%.tex"
+    //         ]
+    //     },
+    //     {
+    //         // 编译工具和命令
+    //         "name": "xelatex",
+    //         "command": "xelatex",
+    //         "args": [
+    //             "-synctex=1",
+    //             "-interaction=nonstopmode",
+    //             "-file-line-error",
+    //             "%DOC%"
+    //         ]
+    //     },
+    //     {
+    //         "name": "pdflatex",
+    //         "command": "pdflatex",
+    //         "args": [
+    //             "-synctex=1",
+    //             "-interaction=nonstopmode",
+    //             "-file-line-error",
+    //             "%DOC%"
+    //         ]
+    //     },
+    //     {
+    //         "name": "bibtex",
+    //         "command": "bibtex",
+    //         "args": [
+    //             "%DOCFILE%"
+    //         ]
+    //     }
+    // ],
+    // // 在编译出PDF文件后，删除临时文件
+    // "latex-workshop.latex.clean.enabled": true,
+    // // 要使用SumatraPDF预览编译好的PDF文件
+    // "latex-workshop.view.pdf.viewer": "external",
+    // "latex-workshop.view.pdf.external.command": {
+    //     "command": "E:/Programs/SumatraPDF/SumatraPDF.exe", //SumatraPDF.exe的实际路径
+    //     "args": [
+    //         "%PDF%"
+    //     ]
+    // },
+    // //  配置Syntex的正向搜索(Latex->PDF)：右键文件空白处，单击“SyncTeX from cursor”即可正向搜索
+    // "latex-workshop.view.pdf.external.synctex": {
+    //     "command": "E:/Programs/SumatraPDF/SumatraPDF.exe", //SumatraPDF.exe的实际路径
+    //     "args": [
+    //         "-forward-search",
+    //         "%TEX%",
+    //         "%LINE%",
+    //         "%PDF%"
+    //     ]
+    // },
+    // // 配置反向搜索（PDF->Latex源代码）
+    // // A: 打开SumatraPDF，进入设置->选项 对话框，在“设置反向搜索命令行”处填入如下内容：
+    // // 双击PDF中的任意一处即可跳转到VSCode中所对应的内容的源代码处。
+    // // (注意： 由于从vscode调用SumatraPDF时是作为子进程的，为避免反向搜索失败，最好是先独立的运行SumatraPDF.exe后再进行正反向搜索。)
+    // // "C:\Program Files\Microsoft VS Code\Code.exe"  -g "%f:%l"
+
+
+    "editor.tabSize": 2,
+    "eslint.autoFixOnSave": true,
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".vue"
+        ]
+    },
+    "eslint.validate": [
+        "javascript", {
+            "language": "vue",
+            "autoFix": true
+        }, "html",
+        "vue"
+    ],
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "vue": "html",
+        "vue-html": "html"
+    },
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorBlinking": "smooth",
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    // "editor.fontFamily": "'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+    "editor.codeLens": true,
+    "editor.renderControlCharacters": true,
+    
+
+}

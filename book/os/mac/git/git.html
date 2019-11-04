@@ -1,0 +1,2096 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git 创建分支提交远程分支详解 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Clark">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-page-copyright/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../mac.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">book</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    gitbook
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../gitbook/advanced.html">
+            
+                <a href="../../../gitbook/advanced.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    advanced.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../gitbook/bookjson.html">
+            
+                <a href="../../../gitbook/bookjson.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    book.json配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../gitbook/build.html">
+            
+                <a href="../../../gitbook/build.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    npm install gitbook-plugin-插件名,
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../gitbook/commands.html">
+            
+                <a href="../../../gitbook/commands.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../gitbook/create.html">
+            
+                <a href="../../../gitbook/create.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    项目搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../gitbook/gitbook-plug.html">
+            
+                <a href="../../../gitbook/gitbook-plug.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    h1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../gitbook/gitbookpei-zhi.html">
+            
+                <a href="../../../gitbook/gitbookpei-zhi.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../gitbook/gulpfile.html">
+            
+                <a href="../../../gitbook/gulpfile.html">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    gulpfile.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../../gitbook/installation.html">
+            
+                <a href="../../../gitbook/installation.html">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    GitBook安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../../gitbook/introduction.html">
+            
+                <a href="../../../gitbook/introduction.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../../gitbook/plugins.html">
+            
+                <a href="../../../gitbook/plugins.html">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    GitBook 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../../gitbook/run.html">
+            
+                <a href="../../../gitbook/run.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    运行部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../../../gitbook/settings.html">
+            
+                <a href="../../../gitbook/settings.html">
+            
+                    
+                        <b>1.2.13.</b>
+                    
+                    GitBook配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../../../gitbook/structure.html">
+            
+                <a href="../../../gitbook/structure.html">
+            
+                    
+                        <b>1.2.14.</b>
+                    
+                    目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../../../gitbook/test.html">
+            
+                <a href="../../../gitbook/test.html">
+            
+                    
+                        <b>1.2.15.</b>
+                    
+                    项目介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../../../gitbook/themes.html">
+            
+                <a href="../../../gitbook/themes.html">
+            
+                    
+                        <b>1.2.16.</b>
+                    
+                    主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../../../gitbook/update.html">
+            
+                <a href="../../../gitbook/update.html">
+            
+                    
+                        <b>1.2.17.</b>
+                    
+                    更新文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../../../gitbook/使用教程.html">
+            
+                <a href="../../../gitbook/使用教程.html">
+            
+                    
+                        <b>1.2.18.</b>
+                    
+                    gitbook - 新的文档书写方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../../../gitbook/根据目录生成summary.html">
+            
+                <a href="../../../gitbook/根据目录生成summary.html">
+            
+                    
+                        <b>1.2.19.</b>
+                    
+                    使用插件生成SUMMARY.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    house
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../house/买房.html">
+            
+                <a href="../../../house/买房.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    买房.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../house/室内设计.html">
+            
+                <a href="../../../house/室内设计.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    工具使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    ios
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../ios/1、开发证书配置.html">
+            
+                <a href="../../../ios/1、开发证书配置.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    1、开发证书配置.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../ios/2、创建工程.html">
+            
+                <a href="../../../ios/2、创建工程.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    2、创建工程.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../ios/3、文本处理.html">
+            
+                <a href="../../../ios/3、文本处理.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    3、文本处理.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../ios/appicon.html">
+            
+                <a href="../../../ios/appicon.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    Python脚本生成iOS全套AppIcon图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    assets
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../ios/connerstonmd.html">
+            
+                <a href="../../../ios/connerstonmd.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    !
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../ios/gitbookpei-zhi.html">
+            
+                <a href="../../../ios/gitbookpei-zhi.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../../ios/launch-image.html">
+            
+                <a href="../../../ios/launch-image.html">
+            
+                    
+                        <b>1.4.8.</b>
+                    
+                    iOS.11后的 iOS LaunchImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../../ios/mac快捷键.html">
+            
+                <a href="../../../ios/mac快捷键.html">
+            
+                    
+                        <b>1.4.9.</b>
+                    
+                    mac快捷键.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../../ios/ttmd.html">
+            
+                <a href="../../../ios/ttmd.html">
+            
+                    
+                        <b>1.4.10.</b>
+                    
+                    ttmd.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../../ios/xcodebao-cuo-ji-zhong.html">
+            
+                <a href="../../../ios/xcodebao-cuo-ji-zhong.html">
+            
+                    
+                        <b>1.4.11.</b>
+                    
+                    xcodebao-cuo-ji-zhong.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../../ios/xiang-mu-gou-jian-liu-cheng.html">
+            
+                <a href="../../../ios/xiang-mu-gou-jian-liu-cheng.html">
+            
+                    
+                        <b>1.4.12.</b>
+                    
+                    问题一：Safe Area Layout Guide before iOS 9.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../../ios/xiang-mu-gou-jian.html">
+            
+                <a href="../../../ios/xiang-mu-gou-jian.html">
+            
+                    
+                        <b>1.4.13.</b>
+                    
+                    正确设置info.plilst的位置方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../../ios/工程清理.html">
+            
+                <a href="../../../ios/工程清理.html">
+            
+                    
+                        <b>1.4.14.</b>
+                    
+                    iOS APP瘦身 清除无用图片资源和import的代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../../ios/开发中的快捷键.html">
+            
+                <a href="../../../ios/开发中的快捷键.html">
+            
+                    
+                        <b>1.4.15.</b>
+                    
+                    开发中的快捷键.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../../ios/正则表达式.html">
+            
+                <a href="../../../ios/正则表达式.html">
+            
+                    
+                        <b>1.4.16.</b>
+                    
+                    正则表达式.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../../../ios/测试.html">
+            
+                <a href="../../../ios/测试.html">
+            
+                    
+                        <b>1.4.17.</b>
+                    
+                    app性能测试简要步骤：
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../../../ios/问题集合.html">
+            
+                <a href="../../../ios/问题集合.html">
+            
+                    
+                        <b>1.4.18.</b>
+                    
+                    问题一：Safe Area Layout Guide before iOS 9.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../../../ios/项目兼容性.html">
+            
+                <a href="../../../ios/项目兼容性.html">
+            
+                    
+                        <b>1.4.19.</b>
+                    
+                    项目兼容性.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    os
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../knowledge.html">
+            
+                <a href="../../knowledge.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    知识库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../linux/linux.html">
+            
+                <a href="../../linux/linux.html">
+            
+                    
+                        <b>1.5.2.1.</b>
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    mac
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.1.</b>
+                    
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.3.1.1" data-path="git.html">
+            
+                <a href="git.html">
+            
+                    
+                        <b>1.5.3.1.1.</b>
+                    
+                    Git 创建分支提交远程分支详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../mac.html">
+            
+                <a href="../mac.html">
+            
+                    
+                        <b>1.5.3.2.</b>
+                    
+                    Mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../npm.html">
+            
+                <a href="../npm.html">
+            
+                    
+                        <b>1.5.3.3.</b>
+                    
+                    npm.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../os.html">
+            
+                <a href="../../os.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    unix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../unix/unix.html">
+            
+                <a href="../../unix/unix.html">
+            
+                    
+                        <b>1.5.5.1.</b>
+                    
+                    Unix
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    win
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../win/windows.html">
+            
+                <a href="../../win/windows.html">
+            
+                    
+                        <b>1.5.6.1.</b>
+                    
+                    windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../taobao/">
+            
+                <a href="../../../taobao/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    taobao
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../taobao/SUMMARY.html">
+            
+                <a href="../../../taobao/SUMMARY.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    assets
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../taobao/ps-2019cc.html">
+            
+                <a href="../../../taobao/ps-2019cc.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    ps-2019cc.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../taobao/产品归类.html">
+            
+                <a href="../../../taobao/产品归类.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    产品归类.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../taobao/六大茶叶种类.html">
+            
+                <a href="../../../taobao/六大茶叶种类.html">
+            
+                    
+                        <b>1.6.5.</b>
+                    
+                    六大茶叶种类.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../../taobao/六大茶类分类法.html">
+            
+                <a href="../../../taobao/六大茶类分类法.html">
+            
+                    
+                        <b>1.6.6.</b>
+                    
+                    六大茶类分类法.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../../taobao/单丛茶.html">
+            
+                <a href="../../../taobao/单丛茶.html">
+            
+                    
+                        <b>1.6.7.</b>
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../../taobao/大乌叶，鸭屎香.html">
+            
+                <a href="../../../taobao/大乌叶，鸭屎香.html">
+            
+                    
+                        <b>1.6.8.</b>
+                    
+                    单丛茶中的两颗明珠：大乌叶，鸭屎香！
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../../taobao/客家炒茶做法.html">
+            
+                <a href="../../../taobao/客家炒茶做法.html">
+            
+                    
+                        <b>1.6.9.</b>
+                    
+                    客家炒茶做法.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../../taobao/店招.html">
+            
+                <a href="../../../taobao/店招.html">
+            
+                    
+                        <b>1.6.10.</b>
+                    
+                    店招
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../../taobao/淘宝店铺可行性报告.html">
+            
+                <a href="../../../taobao/淘宝店铺可行性报告.html">
+            
+                    
+                        <b>1.6.11.</b>
+                    
+                    淘宝店铺可行性报告.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../../taobao/淘宝开店高质量宝贝发布技巧.html">
+            
+                <a href="../../../taobao/淘宝开店高质量宝贝发布技巧.html">
+            
+                    
+                        <b>1.6.12.</b>
+                    
+                    淘宝开店高质量宝贝发布技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../../taobao/淘宝现有茶叶品种.html">
+            
+                <a href="../../../taobao/淘宝现有茶叶品种.html">
+            
+                    
+                        <b>1.6.13.</b>
+                    
+                    淘宝现有茶叶品种.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../../../taobao/茶叶的基本分类.html">
+            
+                <a href="../../../taobao/茶叶的基本分类.html">
+            
+                    
+                        <b>1.6.14.</b>
+                    
+                    茶叶的基本分类【图解】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../../../taobao/茶坨,茶饼、砖茶、散茶和袋泡茶.html">
+            
+                <a href="../../../taobao/茶坨,茶饼、砖茶、散茶和袋泡茶.html">
+            
+                    
+                        <b>1.6.15.</b>
+                    
+                    茶坨,茶饼、砖茶、散茶和袋泡茶.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../../../taobao/金骏眉.html">
+            
+                <a href="../../../taobao/金骏眉.html">
+            
+                    
+                        <b>1.6.16.</b>
+                    
+                    金骏眉.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">res</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                        <b>2.1.</b>
+                    
+                    fonts
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                        <b>2.2.</b>
+                    
+                    i18n
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                        <b>2.3.</b>
+                    
+                    images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                        <b>2.4.</b>
+                    
+                    videos
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">src</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    bin
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    css
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    dist
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    etc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+                <span>
+            
+                    
+                        <b>3.5.</b>
+                    
+                    html
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" >
+            
+                <span>
+            
+                    
+                        <b>3.5.1.</b>
+                    
+                    ebook
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" >
+            
+                <span>
+            
+                    
+                        <b>3.5.2.</b>
+                    
+                    include
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" >
+            
+                <span>
+            
+                    
+                        <b>3.5.3.</b>
+                    
+                    website
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <span>
+            
+                    
+                        <b>3.6.</b>
+                    
+                    images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" >
+            
+                <span>
+            
+                    
+                        <b>3.7.</b>
+                    
+                    js
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" >
+            
+                <span>
+            
+                    
+                        <b>3.7.1.</b>
+                    
+                    core
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7.2" >
+            
+                <span>
+            
+                    
+                        <b>3.7.2.</b>
+                    
+                    theme
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" >
+            
+                <span>
+            
+                    
+                        <b>3.8.</b>
+                    
+                    less
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" >
+            
+                <span>
+            
+                    
+                        <b>3.8.1.</b>
+                    
+                    base
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" >
+            
+                <span>
+            
+                    
+                        <b>3.8.2.</b>
+                    
+                    ebook
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.3" >
+            
+                <span>
+            
+                    
+                        <b>3.8.3.</b>
+                    
+                    website
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" >
+            
+                <span>
+            
+                    
+                        <b>3.9.</b>
+                    
+                    scss
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >Git 创建分支提交远程分支详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#git-&#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;"><b></b>Git &#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#git-&#x521B;&#x5EFA;&#x5206;&#x652F;-&#x5E76;-&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;"><b></b>git &#x521B;&#x5EFA;&#x5206;&#x652F; &#x5E76; &#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</a></li><li><span class="title-icon "></span><a href="#&#x672C;&#x5730;&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;"><b></b>&#x672C;&#x5730;&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5;---&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;"><b></b>&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5; --&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;</a></li><li><span class="title-icon "></span><a href="#&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;"><b></b>&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;</a></li><li><span class="title-icon "></span><a href="#&#x5207;&#x6362;&#x5F53;&#x524D;&#x5206;&#x652F;"><b></b>&#x5207;&#x6362;&#x5F53;&#x524D;&#x5206;&#x652F;</a></li><li><span class="title-icon "></span><a href="#&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;"><b></b>&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</a></li></ul></div><a href="#git-&#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>git&#x56DE;&#x6EDA;&#x5230;&#x4EFB;&#x610F;&#x7248;&#x672C;</p>
+<p>&#x5148;&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x7684;log</p>
+<p>$ git log -3
+commit 4dc08bb8996a6ee02f
+Author: Mark <a href="mailto:xxx@xx.com" target="_blank">xxx@xx.com</a>
+Date:   Wed Sep 7 08:08:53 2016 +0800</p>
+<pre class="language-"><code>xxxxx
+</code></pre><p>commit 9cac9ba76574da2167
+Author: xxx<a href="mailto:xx@qq.com" target="_blank">xx@qq.com</a>
+Date:   Tue Sep 6 22:18:59 2016 +0800</p>
+<pre class="language-"><code>improved the requst
+</code></pre><p>commit e377f60e28c8b84158
+Author: xxx<a href="mailto:xxx@qq.com" target="_blank">xxx@qq.com</a>
+Date:   Tue Sep 6 14:42:44 2016 +0800</p>
+<pre class="language-"><code>changed the password from empty to max123
+</code></pre><p>&#x56DE;&#x6EDA;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;</p>
+<p>git reset --hard e377f60e28c8b84158
+&#x5F3A;&#x5236;&#x63D0;&#x4EA4;</p>
+<p>git push -f origin master</p>
+<p>Git&#x2014;&#x2014;&#x5982;&#x4F55;&#x5C06;&#x672C;&#x5730;&#x9879;&#x76EE;&#x63D0;&#x4EA4;&#x81F3;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;(&#x7B2C;&#x4E00;&#x6B21;)
+1.&#xFF08;&#x5148;&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#xFF09;&#x901A;&#x8FC7;&#x547D;&#x4EE4; git init &#x628A;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x53D8;&#x6210;git&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x7684;&#x4ED3;&#x5E93;&#x3002;</p>
+<p>git init</p>
+<p>2.&#x628A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x7248;&#x672C;&#x5E93;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4; git add .&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;&#x91CC;&#x9762;&#x53BB;&#xFF0C;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x540E;&#x9762;&#x7684;&#x5C0F;&#x6570;&#x70B9;&#x201C;.&#x201D;&#xFF0C;&#x610F;&#x4E3A;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;(&#x5939;)&#x3002;</p>
+<p>git add .</p>
+<p>3.commit&#x5230;&#x4E3B;&#x5206;&#x652F;</p>
+<p>git commit -m &quot;&#x63CF;&#x8FF0;&quot; </p>
+<p>4.&#x767B;&#x5F55;github&#xFF0C;&#x628A;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x63D0;&#x4EA4;&#x81F3;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4F60;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x590D;&#x5236;&#x90A3;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x7136;&#x540E;&#x4F60;&#x5C06;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4E2A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#x3002;</p>
+<p>git remote add origin git@github.com:Garretming/blog.git  </p>
+<p>5.&#x8FDB;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;</p>
+<p>git push -u origin master  </p>
+<p>ps: windows&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;git&#x65F6;&#x62A5;&#x9519;&#x201C;warning: LF will be replaced by CRLF&#x201D;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</p>
+<p>&#x590D;&#x5236;&#x4EE3;&#x7801;
+&#x590D;&#x5236;&#x4EE3;&#x7801;
+$ rm -rf .git  // &#x5220;&#x9664;.git<br>$ git config --global core.autocrlf false  //&#x7981;&#x7528;&#x81EA;&#x52A8;&#x8F6C;&#x6362; </p>
+<p>//&#x7136;&#x540E;&#x91CD;&#x65B0;&#x6267;&#x884C;</p>
+<p>$ git init<br>$ git add . 
+&#x590D;&#x5236;&#x4EE3;&#x7801;
+&#x590D;&#x5236;&#x4EE3;&#x7801;</p>
+<p>rm -rf .git&#x614E;&#x7528;&#xFF01;&#xFF01;&#xFF01;&#xFF01;&#x539F;&#x56E0;&#x8BE6;&#x89C1;&#xFF1A;<a href="https://www.zhihu.com/question/29438735" target="_blank">https://www.zhihu.com/question/29438735</a> &#x4E0D;&#x5C0F;&#x5FC3;&#x6572;&#x4E86;rm -rf&#x540E;&#x53CD;&#x5E94;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;</p>
+<h1 id="git-&#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;"><a name="git-&#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;" class="anchor-navigation-ex-anchor" href="#git-&#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>Git &#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8BE6;&#x89E3;</h1>
+<p>1.&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5206;&#x652F;
+git branch &#x5206;&#x652F;&#x540D;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;git branch 2.0.1.20120806
+&#x6CE8;&#xFF1A;2.0.1.20120806&#x662F;&#x5206;&#x652F;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x4FBF;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>2.&#x5207;&#x6362;&#x672C;&#x5730;&#x5206;&#x652F;
+git checkout &#x5206;&#x652F;&#x540D;&#xFF0C;&#x4F8B;&#x5982;&#x4ECE;master&#x5207;&#x6362;&#x5230;&#x5206;&#x652F;&#xFF1A;git checkout 2.0.1.20120806</p>
+<p>3.&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5C31;&#x662F;&#x672C;&#x5730;&#x5206;&#x652F;push&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;&#x6BD4;&#x5982;master&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6700;&#x5178;&#x578B;&#x7684;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#x3002;
+git push origin 2.0.1.20120806</p>
+<p>4.&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x548C;&#x672C;&#x5730;&#x5206;&#x652F;&#x9700;&#x8981;&#x533A;&#x5206;&#x597D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x62C9;&#x53D6;&#x7279;&#x5B9A;&#x5206;&#x652F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x7684;&#x540D;&#x5B57;&#x3002;
+git checkout --track origin/2.0.1.20120806
+&#x6CE8;&#x610F;&#x8BE5;&#x547D;&#x4EE4;&#x7531;&#x4E8E;&#x5E26;&#x6709;--track&#x53C2;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x6C42;git1.6.4&#x4EE5;&#x4E0A;&#xFF01;&#x8FD9;&#x6837;git&#x4F1A;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x5230;&#x5206;&#x652F;&#x3002;</p>
+<p>5.&#x63D0;&#x4EA4;&#x5206;&#x652F;&#x6570;&#x636E;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;</p>
+<p>git push origin <local_branch_name>:<remote_branch_name>
+&#x4F8B;&#x5982;&#xFF1A;
+git push origin 2.0.1.20120806:2.0.1.20120806
+&#x4E00;&#x822C;&#x5F53;&#x524D;&#x5982;&#x679C;&#x4E0D;&#x5728;&#x8BE5;&#x5206;&#x652F;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x63D0;&#x4EA4;&#x3002;&#x5982;&#x679C;&#x5F53;&#x524D;&#x5728; 2.0.1.20120806 &#x5206;&#x652F;&#x4E0B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D0;&#x4EA4;
+git push</remote_branch_name></local_branch_name></p>
+<p>6.&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x5206;&#x652F;
+git push origin :develop</p>
+<p>1,&#x4ECE;&#x5DF2;&#x6709;&#x7684;&#x5206;&#x652F;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5206;&#x652F;(&#x5982;&#x4ECE;master&#x5206;&#x652F;),&#x521B;&#x5EFA;&#x4E00;&#x4E2A;dev&#x5206;&#x652F;</p>
+<p>?
+1
+Git checkout -b dev
+2,&#x521B;&#x5EFA;&#x5B8C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E00;&#x4E0B;,&#x5206;&#x652F;&#x5DF2;&#x7ECF;&#x5207;&#x6362;&#x5230;dev</p>
+<p>?
+1
+2
+3
+4
+git branch</p>
+<ul>
+<li>dev
+master
+3,&#x63D0;&#x4EA4;&#x8BE5;&#x5206;&#x652F;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<p>?
+1
+git push origin dev
+4,&#x6D4B;&#x8BD5;&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;dev</p>
+<p>?
+1
+git pull origin dev
+&#x6216;&#x8005;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x7528;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x8FD0;&#x884C; git fetch&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x518D;&#x8FD0;&#x884C; git checkout -b local-branchname origin/remote_branchname  &#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x6620;&#x5C04;&#x5230;&#x672C;&#x5730;&#x547D;&#x540D;&#x4E3A;local-branchname  &#x7684;&#x4E00;&#x5206;&#x652F;</p>
+<p>5,&#x6211;&#x89C9;&#x5F97;&#x73B0;&#x5728;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x8BBE;&#x7F6E;git push,pull&#x9ED8;&#x8BA4;&#x7684;&#x63D0;&#x4EA4;&#x83B7;&#x53D6;&#x5206;&#x652F;,&#x8FD9;&#x6837;&#x5C31;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x4F7F;&#x7528;git push &#x63D0;&#x4EA4;&#x4FE1;&#x606F;&#x6216;git pull&#x83B7;&#x53D6;&#x4FE1;&#x606F;</p>
+<p>?
+1
+git branch --set-upstream-to=origin/dev
+&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;</p>
+<p>?
+1
+git branch --unset-upstream master
+6,&#x73B0;&#x5728;&#x968F;&#x4FBF;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x5DE5;&#x7A0B;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;,&#x7136;&#x540E;git commit ,git push,&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x7684;dev&#x5206;&#x652F;&#x4E2D;,&#x800C;&#x4E0D;&#x4F1A;&#x662F;master</p>
+<h1 id="git-&#x521B;&#x5EFA;&#x5206;&#x652F;-&#x5E76;-&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;"><a name="git-&#x521B;&#x5EFA;&#x5206;&#x652F;-&#x5E76;-&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#git-&#x521B;&#x5EFA;&#x5206;&#x652F;-&#x5E76;-&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>git &#x521B;&#x5EFA;&#x5206;&#x652F; &#x5E76; &#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</h1>
+<p>git branch&#xFF08;&#x5206;&#x652F;&#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;
+<a href="http://hbiao68.iteye.com/blog/2055493" target="_blank">http://hbiao68.iteye.com/blog/2055493</a></p>
+<p>0.&#x53EF;&#x4EE5;&#x901A;&#x8FC7;git branch -r &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x8FDC;&#x7AEF;&#x5E93;&#x7684;&#x5206;&#x652F;&#x60C5;&#x51B5;</p>
+<p>1,&#x4ECE;&#x5DF2;&#x6709;&#x7684;&#x5206;&#x652F;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5206;&#x652F;(&#x5982;&#x4ECE;master&#x5206;&#x652F;),&#x521B;&#x5EFA;&#x4E00;&#x4E2A;dev&#x5206;&#x652F;</p>
+<p>git checkout -b dev</p>
+<p>2,&#x521B;&#x5EFA;&#x5B8C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E00;&#x4E0B;,&#x5206;&#x652F;&#x5DF2;&#x7ECF;&#x5207;&#x6362;&#x5230;dev</p>
+<p>git branch</p>
+<pre class="language-"><code>* dev
+
+master
+</code></pre><p>3.&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5; --&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;</p>
+<p>git branch --set-upstream-to=origin/dev </p>
+<p>&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;</p>
+<p>git branch --unset-upstream master</p>
+<p>git &#x521B;&#x5EFA;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x8FDC;&#x7A0B;&#x5206;&#x652F; </p>
+<p>&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x5E94;&#x8BE5;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x610F;&#x601D;&#xFF0C;=upstream : &#x4E0A;&#x6E38;&#x7801;&#x6D41;&#x7684;&#x610F;&#x601D;
+git branch --set-upstream-to=master
+git branch --set-upstream-to=original/master</p>
+<p>git help branch
+git branch [--set-upstream | --track | --no-track] [-l] [-f] <branchname> [<start-point>]
+git branch (--set-upstream-to=<upstream> | -u <upstream>) [<branchname>]
+git branch --unset-upstream [<branchname>]</branchname></branchname></upstream></upstream></start-point></branchname></p>
+<p>git branch --set-upstream-to=original/master new
+git branch --set-upstream debug origin/debug //&#x5176;&#x4E2D;debug&#x4E3A;&#x521B;&#x5EFA;&#x7684;&#x5206;&#x652F;</p>
+<p>git branch --set-upstream debug origin/debug</p>
+<p>&#x63D0;&#x4EA4;&#x8BE5;&#x5206;&#x652F;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
+git push origin dev</p>
+<p>git push origin&#x4E0E;git push -u origin master&#x7684;&#x533A;&#x522B;</p>
+<p>$ git push origin</p>
+<p>&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x8868;&#x793A;&#xFF0C;&#x5C06;&#x5F53;&#x524D;&#x5206;&#x652F;&#x63A8;&#x9001;&#x5230;origin&#x4E3B;&#x673A;&#x7684;&#x5BF9;&#x5E94;&#x5206;&#x652F;&#x3002; </p>
+<p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x5206;&#x652F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8FFD;&#x8E2A;&#x5206;&#x652F;&#xFF0C;&#x90A3;&#x4E48;&#x4E3B;&#x673A;&#x540D;&#x90FD;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x3002; </p>
+<p>$ git push &#x5982;&#x679C;&#x5F53;&#x524D;&#x5206;&#x652F;&#x4E0E;&#x591A;&#x4E2A;&#x4E3B;&#x673A;&#x5B58;&#x5728;&#x8FFD;&#x8E2A;&#x5173;&#x7CFB;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;-u&#x9009;&#x9879;&#x4F1A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x4E3B;&#x673A;&#xFF0C;&#x8FD9;&#x6837;&#x540E;&#x9762;&#x5C31;&#x53EF;&#x4EE5;&#x4E0D;&#x52A0;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x4F7F;&#x7528;git push&#x3002;</p>
+<p>$ git push -u origin master &#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x5C06;&#x672C;&#x5730;&#x7684;master&#x5206;&#x652F;&#x63A8;&#x9001;&#x5230;origin&#x4E3B;&#x673A;&#xFF0C;&#x540C;&#x65F6;&#x6307;&#x5B9A;origin&#x4E3A;&#x9ED8;&#x8BA4;&#x4E3B;&#x673A;&#xFF0C;&#x540E;&#x9762;&#x5C31;&#x53EF;&#x4EE5;&#x4E0D;&#x52A0;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x4F7F;&#x7528;git push&#x4E86;&#x3002;</p>
+<h1 id="&#x672C;&#x5730;&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;"><a name="&#x672C;&#x5730;&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x672C;&#x5730;&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x672C;&#x5730;&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;&#x5E93;</h1>
+<p>git push origin master
+git push origin HEAD:refs/for/&#x8FDC;&#x7AEF;&#x5206;&#x652F;&#x540D;</p>
+<p>git push origin &#x672C;&#x5730;&#x5206;&#x652F;&#x540D;:refs/for/&#x8FDC;&#x7AEF;&#x5206;&#x652F;&#x540D;</p>
+<p>eg:
+git push origin test:refs/for/master #&#x672C;&#x5730;test&#x5206;&#x652F;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7AEF;master&#x5E93;</p>
+<p>&#x5728;&#x8FDC;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x65B0;&#x5EFA;&#x5206;&#x652F;&#xFF1A;</p>
+<p>&#x65B9;&#x6CD5;1&#xFF1A;</p>
+<p>git checkout -b dev</p>
+<h1 id="&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5;---&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;"><a name="&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5;---&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;" class="anchor-navigation-ex-anchor" href="#&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5;---&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5EFA;&#x7ACB;&#x672C;&#x5730;&#x5230;&#x4E0A;&#x6E38;&#xFF08;&#x8FDC;&#x7AEF;&#xFF09;&#x4ED3;&#x7684;&#x94FE;&#x63A5; --&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x624D;&#x80FD;&#x63D0;&#x4EA4;&#x4E0A;&#x53BB;</h1>
+<p>git branch --set-upstream-to=origin/dev 
+git branch --set-upstream debug origin/debug //&#x5176;&#x4E2D;debug&#x4E3A;&#x521B;&#x5EFA;&#x7684;&#x5206;&#x652F;
+git push origin dev</p>
+<h1 id="&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;"><a name="&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;" class="anchor-navigation-ex-anchor" href="#&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53D6;&#x6D88;&#x5BF9;master&#x7684;&#x8DDF;&#x8E2A;</h1>
+<p>git branch --unset-upstream master</p>
+<p>&#x65B9;&#x6CD5;2&#xFF1A;</p>
+<p>git branch -b stage2
+git push origin &#x672C;&#x5730;&#x5206;&#x652F;&#x540D;:&#x8FDC;&#x7AEF;&#x5206;&#x652F;&#x540D;xx  // &#x5728;&#x670D;&#x52D9;&#x5668;&#x65B0;&#x5EFA;&#x65B0;&#x5206;&#x652F;&#x540D;xxx</p>
+<p>&#x5BF9;&#x6BD4;&#xFF1A;</p>
+<p>git branch -b stag2
+git push origin stage2:refs/for/stage2 // &#x4EE3;&#x7801;&#x5165;&#x5EAB;&#x547D;&#x4EE4;&#xFF0C;&#x4E0D;&#x4F1A;&#x65B0;&#x5EFA;&#x65B0;&#x5206;&#x652F;&#x5728;&#x8FDC;&#x7AEF;</p>
+<h1 id="&#x5207;&#x6362;&#x5F53;&#x524D;&#x5206;&#x652F;"><a name="&#x5207;&#x6362;&#x5F53;&#x524D;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#&#x5207;&#x6362;&#x5F53;&#x524D;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5207;&#x6362;&#x5F53;&#x524D;&#x5206;&#x652F;</h1>
+<p>git checkout --orphan gh-pages</p>
+<h1 id="&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;"><a name="&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;" class="anchor-navigation-ex-anchor" href="#&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</h1>
+<p>git push -u origin gh-pages </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; clark-xm.xyz 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;:
+2019-07-13 11:00:55
+</span></footer> 
+
+<footer class="footer"><div class="footer__container--normal" alt="
+https://github.com/skyFibook/os/mac/git/git.html
+">
+<a href="../../../../gif;base64,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" data-lightbox="01e95460-7ddf-41fd-b7bc-867e5329302c" data-title="undefined"><img src="data:image/gif;base64,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" width="170" height="170"></a>
+<div class="footer__description--normal"><p class="paragraph footer__author--normal" style="color: #000 !important;">clark<sup class="super">&#xAE;</sup></p><p class="paragraph footer__quote--normal" style="color: #000 !important;">Designer, Frontend Developer &amp; overall web enthusiast</p><div class="footer__main--normal"><p class="paragraph footer__main__paragraph--normal copyright" style="color: #666 !important;">Copyright &#xA9; clark all right reserved, powered by <a href="https://github.com/skyFi" target="_blank">skyFi</a></p><p class="paragraph footer__main__paragraph--normal footer__modifyTime--normal" style="color: #666 !important;"><span style="color: #666 !important;">modified at</span>
+2019-07-13 11:00:55
+</p></div></div></div><div class="box__issues">
+
+</div></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git 创建分支提交远程分支详解","level":"1.5.3.1.1","depth":4,"next":{"title":"Mac","level":"1.5.3.2","depth":3,"path":"book/os/mac/mac.md","ref":"book/os/mac/mac.md","articles":[]},"previous":{"title":"git","level":"1.5.3.1","depth":3,"ref":"","articles":[{"title":"Git 创建分支提交远程分支详解","level":"1.5.3.1.1","depth":4,"path":"book/os/mac/git/git.md","ref":"book/os/mac/git/git.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-api","theme-comscore","theme-default","theme-faq","search-pro","-insert-logo","-highlight","prism","prism-themes","code","copy-code-button","github","-lunr","-search","search-plus","-back-to-top-button","-page-toc-button","simple-page-toc","chapter-fold","-expandable-chapters-small","-page-treeview","-expandable-chapters","advanced-emoji","emphasize","splitter","-sharing","sharing-plus","tbfed-pagefooter","page-copyright","sectionx","-fontsettings","ancre-navigation","klipse","donate","change_girls","alerts","pageview-count","auto-scroll-table","popup","lightbox","click-reveal","custom-favicon","-gitalk","-disqus","-theme-official","-sitemap-general","-terminal","versions-select","-rss","include-codeblock","ace","edit-link","-musicxml","local-video","summary","livereload"],"styles":{"website":"./res/website/website.css","ebook":"./res/website/ebook.css","pdf":"./res/website/pdf.css","mobi":"./res/website/mobi.css","epub":"./res/website/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy clark-xm.xyz 2019","modify_label":"该文件修订时间:","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["summary","toggle-chapters","theme-comscore"],"page-treeview":{"copyright":"Copyright &#169; clark","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"emphasize":{},"ace":{},"github":{"url":"https://github.com/Garretming/BlackTech"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"summary":{},"splitter":{},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2",""]},"search-pro":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; clark","styles (normal, symmetrical)":"normal","style":"normal","isShowQRCode":true,"timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"clark","baseUri":"https://github.com/skyFi","copyrightColor":"#666","description":"modified at"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":false},"versions-select":{"type":"branches"},"donate":{"alipay":"./res/images/qr-alipay-255.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"./res/images/qr-wechat-255.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://clark-xm.xyz/"},"hide-element":{"elements":[".gitbook-link"]},"theme-faq":{},"fontsettings":{"theme":"sepia","family":"serif","size":1},"rss":{"title":"GitBook 使用教程","description":"记录 GitBook 的配置和一些插件的使用","author":"clark","feed_url":"http://gitbook.clark-xm.xyz/rss","site_url":"http://gitbook.clark-xm.xyz/","managingEditor":"me@clark-xm.xyz","webMaster":"me@clark-xm.xyz","categories":["gitbook"]},"click-reveal":{},"sectionx":{"tag":"b"},"favicon":"./res/images/favicon.ico","lightbox":{"jquery":true},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"theme-api":{"languages":[],"split":true,"theme":"dark"},"back-to-top-button":{},"pageview-count":{},"prism-themes":{},"alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"flexible-alerts":{"style":"callout","comment":{"label":"Comment","icon":"fa fa-comments","className":"info"}},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"value":"http://gitbook.clark-xm.xyz","text":"v3.2.3"},{"value":"http://gitbook.clark-xm.xyz/v2/","text":"v2.6.4"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"monokai","unindent":true},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"edit-link":{"label":"Edit This Page","base":"https://github.com/Garretming/BlackTech/edit/master"},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"url":"./res/images/logo.png","style":"background: none; max-height: 30px; min-height: 30px"},"search-plus":{}},"theme":"default","head_keywords":"界面交互，策划文案，开发协议，开发记录","author":"Clark","titl":"BlackTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","output.name":"site","head_title":"开发记录","links":{"siderbar":"clark-xm.xyz"},"gitbook":"*","description":"日常工作记录","head_description":"开发过程中的文档记录"},"file":{"path":"book/os/mac/git/git.md","mtime":"2019-07-13T03:00:55.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T13:15:27.002Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

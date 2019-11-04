@@ -1,0 +1,138 @@
+// {
+//     // See https://go.microsoft.com/fwlink/?LinkId=733558
+//     // for the documentation about the tasks.json format
+//     "version": "2.0.0",
+//     // "version": "0.1.0",
+//     "tasks": [
+//         ////typescript任务
+//         {
+//             // "suppressTaskName": true,
+//             // "taskName": "build",
+//             "label": "typescript",
+//             "type": "shell",
+//             // "command": "gulp",
+//             "command": "tsc",
+//             // "args": [
+//             //     "--no-color"
+//             // ],
+//             "args": [
+//                 "-p",
+//                 ".",
+//                 "-w"
+//                 // "HelloWorld.ts"
+//             ],
+//             // "tsconfig": "tsconfig.json",
+//             // "isTestCommand": true,
+//             "group": {
+
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             // "showOutput": "always",
+//             // "showOutput": "silent",
+//             "presentation": {
+//                 "echo": true,
+//                 "reveal": "silent",
+//                 "focus": false,
+//                 "panel": "shared",
+//                 "showReuseMessage": true
+//             },
+            
+//             // "isWatching": true,
+//             //     "isBackground": true,
+//             "isBackground": true,
+//             // "problemMatcher": "$tsc",
+//             "problemMatcher": "$tsc-watch",
+//         },
+//         {
+//             "type": "typescript",
+//             "tsconfig": "tsconfig.json",
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+       
+//         },
+//         // {
+//         //     "type": "npm",
+//         //     "script": "lint",
+//         //     "problemMatcher": [
+//         //         "$eslint-stylish"
+//         //     ],
+//         //     "presentation": {
+//         //         "reveal": "never"
+//         //     },
+//         // },
+//         {
+//             // "taskName": "Run tests",
+//             "label": "run tests",
+//             "type": "shell",
+//             "command": "./scripts/test.sh",
+//             "windows": {
+//                 "command": ".\\scripts\\test.cmd"
+//             },
+//             "group": "test",
+//             "presentation": {
+//                 "reveal": "always",
+//                 "panel": "new"
+//             }
+//         },
+//         //////////////lua--gulp任务
+//         {
+//             // "suppressTaskName": true,
+//             // "taskName": "build",
+//             "label": "build",
+//             "command": "gulp",
+//             // "isShellCommand": true,
+//             "type": "shell",
+//             // "showOutput": "always",
+//             "presentation": {
+//                 "reveal": "always",
+//                 "panel": "new"
+//             },
+           
+//             "isBackground": true,
+//             "args": [
+//                 "default"
+//             ]
+//         },
+//         {
+//             "label": "makeMainfile",
+//             "command": "gulp",
+//             "args": [
+//                 "makeMainfile"
+//             ]
+//         },
+//         {
+//             "label": "buildRelease",
+//             "command": "gulp",
+//             "args": [
+//                 "buildRelease"
+//             ]
+//         },
+//         {
+//             "label": "buildDebug",
+//             "command": "gulp",
+//             "args": [
+//                 "buildDebug"
+//             ]
+//         },
+//         {
+//             "label": "domd5",
+//             "command": "gulp",
+//             "args": [
+//                 "domd5"
+//             ]
+//         },
+//         {
+//             "label": "test",
+//             "command": "gulp",
+//             "args": [
+//                 "test"
+//             ],
+//             // "isTestCommand": true
+//         }
+
+//     ]
+// }
+
